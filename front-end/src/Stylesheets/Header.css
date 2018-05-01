@@ -1,0 +1,43 @@
+.header {
+    background-color: #222;
+    height: 50px;
+    width: 100%;
+    color: white;
+    display: grid;
+    grid-template-columns: 10% 20% 60% 10%;
+    grid-template-rows: 100%;
+}
+
+.header-image{
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+.header-text{
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+}
+
+.header-search{
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+.header input[type=text] {
+    float: center;
+    padding: 6px;
+    border: none;
+    font-size: 17px;
+}
+
+.header-button{
+    background-color: antiquewhite;
+    font-size: 17px;
+    padding: 6px;
+    border: none;
+}
