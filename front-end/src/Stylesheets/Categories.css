@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:700');
+
+.categories {
+    background-color: rgb(0, 0, 0);
+    height: 55px;
+    width: 100%;
+    color: white;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.food{
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+    background-image: url('https://image.ibb.co/n8qvZS/food.png');
+}
+.stores{
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+}
+.services{
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+}
+.nightlife{
+    grid-column: 4;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+}
