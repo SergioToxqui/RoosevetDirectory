@@ -7,7 +7,6 @@
     grid-template-columns: 5% 15% 60% 20%;
     grid-template-rows: 100%;
     font-family: 'Roboto', sans-serif;
-    border-bottom: 1px black solid;
 }
 
 .header-image{
@@ -34,8 +33,9 @@
 .header input[type=text] {
     padding: 9px;
     margin-top: 8px;
-    font-size: 16px;
+    font-size: 18px;
     border: #833c7d 2px solid;
+    font-family: 'Special Elite', sans-serif;
 }
 
 .header-button{
