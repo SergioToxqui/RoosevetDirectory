@@ -5,10 +5,10 @@ import React, { Component } from "react";
 const Categories = () => {
     return (
       <div className="categories">
-      <div className="food">FOOD</div>
-      <div className="stores">STORES</div>
-      <div className="services">SERVICES</div>
-      <div className="nightlife">NIGHTLIFE</div>
+      <div className="food"><span>FOOD</span></div>
+      <div className="stores"><span>STORES</span></div>
+      <div className="services"><span>SERVICES</span></div>
+      <div className="nightlife"><span>NIGHTLIFE</span></div>
       </div>
     );
   };

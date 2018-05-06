@@ -34,9 +34,8 @@
 .header input[type=text] {
     padding: 9px;
     margin-top: 8px;
-    font-size: 18px;
+    font-size: 16px;
     border: #833c7d 2px solid;
-    font-family: 'Special Elite', sans-serif;
 }
 
 .header-button{
