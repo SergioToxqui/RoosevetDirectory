@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400');
 
 .categories {
     background: black;
@@ -10,6 +10,7 @@
     grid-template-rows: 100%;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5em;
+    border-bottom: 1px black solid;
 }
 
 .food{
@@ -20,6 +21,7 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
+    border: solid white 2px;
 }
 
 .food span{
@@ -32,7 +34,7 @@
 
 .food:hover { 
     filter: grayscale(0%);
-    border: solid white 4px;
+    border: 0px;
 }
 
 .stores{
@@ -43,6 +45,7 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
+    border: solid white 2px;
 }
 
 .stores span{
@@ -55,7 +58,7 @@
 
 .stores:hover { 
     filter: grayscale(0%);
-    border: solid white 4px;
+    border: 0px;
 }
 
 
@@ -67,6 +70,7 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
+    border: solid white 2px;
 }
 
 .services span{
@@ -79,7 +83,7 @@
 
 .services:hover { 
     filter: grayscale(0%);
-    border: solid white 4px;
+    border: 0px;
 }
 
 .nightlife{
@@ -90,6 +94,7 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
+    border: solid white 2px;
 }
 
 .nightlife span{
@@ -101,7 +106,7 @@
 }
 .nightlife:hover { 
     filter: grayscale(0%);
-    border: solid white 4px;
+    border: 0px;
 }
 /* 
 

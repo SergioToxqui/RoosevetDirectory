@@ -29,6 +29,7 @@
     grid-column: 3;
     grid-row: 1;
     justify-self: center;
+
 }
 
 .header input[type=text] {

@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400');
+
+.landing{
+    height: 100%;
+}
+.front {
+    height: 150px;
+    width: 100%;
+    color: black;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 25% 50% 25%;
+    background-image: url(https://image.ibb.co/eU3Eg7/frontsearch.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.front-search{
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: center;
+    align-content: center;
+}
+
+.front input[type=text] {
+    width:400px;
+    padding: 24px 20px 18px 20px;
+    margin-top: 8px;
+    font-size: 24px;
+    border: #833c7d 4px solid;
+}
+
+.front-button{
+    float: right;
+    cursor: pointer;
+    border: none;
+    padding: 5px 5px 0px 0px white;
+}
+
+.spotlight{
+    background-color: #fff0fe;
+    height: 58px;
+    width:100%;
+    height:65%;
+    color: black;
+    display: grid;
+   grid-template-columns: 5% 30% 60% 5%; 
+    grid-template-rows: 10% 60% 30%;
+    font-family: 'Roboto', sans-serif;
+    border: 1px black solid;
+    position: absolute;
+}
+
+.spotlight-title{
+    grid-column: 2;
+    grid-row: 1;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5em;
+    background-color: #833c7d;
+    color:white;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5em;
+    text-shadow: 2px 2px 8px black;
+}
+
+.spotlight-links{
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 1.5em;
+    background-color: white;
+    text-align: left;
+    vertical-align: baseline;
+}
+
+.spotlight-image{
+    grid-column: 2;
+    grid-row: 2;
+    background-color: white;
+}
+
+.spotlight-description{
+    grid-column: 3;
+    grid-row: 2;
+    background-color: white;
+}
+
+.spotlight-info{
+    grid-column: 2;
+    grid-row: 3;
+    background-color: white;
+}
+
+.spotlight-hours{
+    grid-column: 3;
+    grid-row: 3;
+    background-color: white;
+}
+
+/*  
+      <div className="spotlight">
+      <div className="spotlight-title">MAY'S SHOWCASE</div>
+      <div className="spotlight-links">To see our previous</div>
+      <div className="spotlight-image"></div>
+      <div className="spotlight-description"></div>
+      <div className="sspotlight-info"></div>
+      <div className="spotlight-hours"></div>
+*/
+
+
+
+
+
+
+ 
+/*
+    align-self: center;
+    padding: 12px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    outline: black solid 2px;
+*/
