@@ -1,19 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400');
 
 .categories {
-    background: black;
+    background: white;
     height: 55px;
-    width: 100%;
+    width: 95%;
     color:white;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 100%;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5em;
-    border-bottom: 1px black solid;
+
+    grid-column-gap: 1em;
 }
 
-.food{
+.foodCat{
     grid-column: 1;
     grid-row: 1;
     background-image: url(https://image.ibb.co/n8qvZS/food.png);
@@ -24,7 +25,7 @@
     border: solid white 2px;
 }
 
-.food span{
+.foodCat span{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -32,12 +33,12 @@
     text-shadow: 2px 2px 8px black;
 }
 
-.food:hover { 
+.foodCat:hover { 
     filter: grayscale(0%);
     border: 0px;
 }
 
-.stores{
+.storesCat{
     grid-column: 2;
     grid-row: 1;
     background-image: url(https://image.ibb.co/iafEeS/stores.png);
@@ -48,7 +49,7 @@
     border: solid white 2px;
 }
 
-.stores span{
+.storesCat span{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -56,13 +57,13 @@
     text-shadow: 2px 2px 8px black;        
 }
 
-.stores:hover { 
+.storesCat:hover { 
     filter: grayscale(0%);
     border: 0px;
 }
 
 
-.services{
+.servicesCat{
     grid-column: 3;
     grid-row: 1;
     background-image: url(https://image.ibb.co/jW8BR7/services.png);
@@ -73,7 +74,7 @@
     border: solid white 2px;
 }
 
-.services span{
+.servicesCat span{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -81,12 +82,12 @@
     text-shadow: 2px 2px 8px black;
 }
 
-.services:hover { 
+.servicesCat:hover { 
     filter: grayscale(0%);
     border: 0px;
 }
 
-.nightlife{
+.nightlifeCat{
     grid-column: 4;
     grid-row: 1;
     background-image: url(https://image.ibb.co/iEJ0KS/nightlife.png);
@@ -97,18 +98,33 @@
     border: solid white 2px;
 }
 
-.nightlife span{
+.nightlifeCat span{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-shadow: 2px 2px 8px black;
 }
-.nightlife:hover { 
+.nightlifeCat:hover { 
     filter: grayscale(0%);
     border: 0px;
 }
-/* 
 
+a:link {
+    color: white;
+}
 
-*/
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color:  white;
+}
+
+/* selected link */
+a:active {
+    color: white;
+}

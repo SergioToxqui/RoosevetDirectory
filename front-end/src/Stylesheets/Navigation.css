@@ -1,11 +1,33 @@
 .navigation{
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 1em;
+    height: 20px;
     color: black;
     font-family: 'Special Elite', sans-serif;
-    border-bottom: 1px black solid;
     font-size: 18px;
     text-align: center;
     padding-top:0.2em;
+}
+
+.navigation a:link {
+    color: black;
+    text-decoration: none;
+}
+
+/* visited link */
+.navigation a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+/* mouse over link */
+.navigation a:hover {
+    color:  black;
+    text-decoration: none;
+}
+
+/* selected link */
+.navigation a:active {
+    color: black;
+    text-decoration: none;
 }
