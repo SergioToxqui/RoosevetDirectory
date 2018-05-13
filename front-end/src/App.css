@@ -1,26 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Special+Elite');
 
 
-html {
+.App {
   height: 100%;
+  width: 100%;
 }
 
 body{
-  background-color:#DAECF3;
+  background-color:rgb(255, 255, 255);
   color:black;
-}
-
-
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
