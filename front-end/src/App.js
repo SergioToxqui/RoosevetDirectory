@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
-import { Route, Link, Switch, Redirect} from "react-router-dom";
-import logo from './logo.svg';
+import React from "react";
+import { Route, Link, Switch } from "react-router-dom";
 import './App.css';
 import "./Stylesheets/Header.css";
 import "./Stylesheets/Categories.css";
 import "./Stylesheets/Navigation.css";
 import "./Stylesheets/Front.css";
 import "./Stylesheets/Food.css";
+import "./Stylesheets/Home.css";
 import "./Stylesheets/Stores.css";
 import "./Stylesheets/Services.css";
 import "./Stylesheets/Nightlife.css";
@@ -15,6 +14,7 @@ import "./Stylesheets/Nightlife.css";
 //import Categories from "./Navigation/Categories";
 //import Navigation from "./Navigation/Navigation";
 import Front from "./Navigation/Front";
+import Home from "./Navigation/Home";
 import Food from "./Navigation/Food";
 import Stores from "./Navigation/Stores";
 import Services from "./Navigation/Services";
@@ -26,11 +26,11 @@ class App extends React.Component {
     return (
       <div className="App">
       <div className="header">
-      <div className="header-image"><Link to ='/'><img src="https://image.ibb.co/n3Qkin/logo50.png"/></Link></div>
+      <div className="header-image"><Link to ='/'><img src="https://image.ibb.co/n3Qkin/logo50.png" alt="logo" /></Link></div>
       <div className="header-text">|  <Link to ='/'> Roosevelt Directory</Link></div>
       <div className="header-search">
       <input type="text" placeholder="search.." />      
-      <button type="submit" className="header-button"><img src="https://image.ibb.co/jf7heS/search30.png"/></button>
+      <button type="submit" className="header-button"><img src="https://image.ibb.co/jf7heS/search30.png" alt="search" /></button>
       </div>
       </div>
         <div className="categories">
@@ -43,7 +43,7 @@ class App extends React.Component {
       <Link to ='/'>DIRECTORY</Link> >  CATEGORY >  SUBCATEGORY > DETAILS PAGE
       </div>
       <Switch>
-      <Route exact path="/" render={Front} />
+      <Route exact path="/" render={Home} />
       <Route path="/food" render={Food} />
       <Route path="/stores" render={Stores} />
       <Route path="/services" render={Services} />

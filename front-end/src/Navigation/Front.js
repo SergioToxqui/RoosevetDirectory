@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 
 
@@ -6,9 +6,9 @@ const Front = () => {
     return (
       <div className="landing">
       <div className="front">
-        <div className="front-search">
+      <div className="front-search">
         <input type="text" placeholder="search.." />      
-        <button type="submit" className="header-button"><img src="https://image.ibb.co/n1dBuS/seachbig.png" /></button>
+        <button type="submit" className="header-button"><img src="https://image.ibb.co/n1dBuS/seachbig.png" alt="search icon" /></button>
         </div>
       </div>
 
