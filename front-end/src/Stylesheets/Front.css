@@ -11,7 +11,7 @@
     display: grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-rows: 25% 50% 25%;
-    background-image: url(https://image.ibb.co/eU3Eg7/frontsearch.png);
+    background-image: url();
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -31,6 +31,7 @@
     margin-top: 8px;
     font-size: 24px;
     border: #833c7d 4px solid;
+    color: black;
 }
 
 .front-button{
