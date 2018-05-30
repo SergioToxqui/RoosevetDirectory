@@ -10,15 +10,17 @@ import "./Stylesheets/Home.css";
 import "./Stylesheets/Stores.css";
 import "./Stylesheets/Services.css";
 import "./Stylesheets/Nightlife.css";
+import "./Stylesheets/Tile.css";
 //import Header from "./Navigation/Header";
 //import Categories from "./Navigation/Categories";
 //import Navigation from "./Navigation/Navigation";
-import Front from "./Navigation/Front";
+//import Front from "./Navigation/Front";
 import Home from "./Navigation/Home";
 import Food from "./Navigation/Food";
 import Stores from "./Navigation/Stores";
 import Services from "./Navigation/Services";
 import Nightlife from "./Navigation/Nightlife";
+import StoreTiles from "./Navigation/StoreTiles";
 
 
 class App extends React.Component {
@@ -44,7 +46,7 @@ class App extends React.Component {
       </div>
       <Switch>
       <Route exact path="/" render={Home} />
-      <Route path="/food" render={Food} />
+      <Route path="/food" component={Food} />
       <Route path="/stores" render={Stores} />
       <Route path="/services" render={Services} />
       <Route path="/nightlife" render={Nightlife} />
