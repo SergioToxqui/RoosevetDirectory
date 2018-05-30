@@ -1,0 +1,19 @@
+
+.tiles{
+    margin-top: 200px;
+    color: black;
+    position: relative;
+    width: 100%;
+    justify-self: center;
+    align-content: center;
+
+}
+
+.tileImage{
+    width:300px;
+    height:300px;
+}
+
+.tileName{
+    font-size: 20px;
+}
