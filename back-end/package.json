@@ -1,19 +1,20 @@
 {
-  "name": "back-end",
+  "name": "backend",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "dependencies": {
-    "axios": "^0.18.0",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
-    "nodemon": "^1.17.1",
+    "nodemon": "^1.17.4",
+    "pg-promise": "^8.1.0",
     "serve-favicon": "~2.4.5"
   }
 }
