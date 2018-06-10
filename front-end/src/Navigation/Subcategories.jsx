@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Route, Link, Switch } from "react-router-dom";
 import StoreTiles from "./StoreTiles";
-import StoreList from "./StoreList"
+
 
 
   
@@ -16,12 +16,10 @@ class Subcategories extends React.Component {
         };
       };
 
-      renderStoreList = () => {
-        return (<StoreList storeList = {this.state.storeList} />)
-      }
-
       handleOnClick = (e) => {
         this.getStoreList(e.target.id)
+        this.props.handleSubcategoryId(e.target.id)
+
       }
 
       getStoreList = (id) => {
@@ -42,9 +40,9 @@ class Subcategories extends React.Component {
             {this.props.subcategories.map((elem, i) => {
               return (
                 <Link to ={`/food/${elem.name}`}>
-                <div className='tiles' key={i}>   
+                <div className='tile' key={i}>   
                <img src={elem.image} alt={`/${elem.name}`} className='tileImage'  id={elem.id} onClick={this.handleOnClick}/>
-               <span className='tileName'> {elem.name}</span>
+               <div className='tileName'> {elem.name}</div>
                 </div>
                 </Link>
               )

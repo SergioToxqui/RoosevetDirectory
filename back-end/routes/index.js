@@ -3,18 +3,15 @@ var router = express.Router();
 var db = require('../db/queries')
 
 /* GET home page. */
-router.get("/", function(req, res, next) {
-  res.render("index", { title: "Express" });
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
 });
 
-router.get("/subcategory/:categoryID", db.getSubcategories);
-//           
+router.get("/:category", db.getSubcategories);
 
-router.get("/store/:subcategoryID", db.getAllStores);
+router.get("/:category/:subcategory", db.getStoresBySubcategory);
 
-//router.post("/teachers/subject", db.getAllSubToCat);
-
-//router.post("/teachers/name", db.getAllStoreToSub);
+router.get("/:category/:subcategory/:storeName", db.getStoreByName);
 
 module.exports = router;
 

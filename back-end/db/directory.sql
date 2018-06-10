@@ -12,7 +12,7 @@ CREATE TABLE subcategories (
  ID SERIAL PRIMARY KEY,
  name VARCHAR NOT NULL,
  image VARCHAR,
- categoriesID INTEGER
+ category_name VARCHAR
 );
 
 --change this to businesses
@@ -27,31 +27,31 @@ CREATE TABLE stores (
  photo3 VARCHAR,
  blurb VARCHAR,
  maps VARCHAR,
- subcategoryID INTEGER
+ subcategory_name VARCHAR
 );
 
 INSERT INTO categories (ID, name)
- VALUES (1, 'FOOD'),
- (2, 'STORES'),
- (3, 'SERVICES'),
- (4, 'NIGHTLIFE');
+ VALUES (1, 'food'),
+ (2, 'stores'),
+ (3, 'services'),
+ (4, 'nightlife');
 
 
- INSERT INTO subcategories (ID, name, image, categoriesID)
- VALUES (1, 'Restaurants', 'https://image.ibb.co/iXoY1J/almost.png', 1),
- (2, 'Bakerys', 'https://image.ibb.co/iXoY1J/almost.png', 1),
- (3, 'Shoe Stores', 'https://image.ibb.co/iXoY1J/almost.png', 2),
- (4, 'Clothing', 'https://image.ibb.co/iXoY1J/almost.png', 2),
- (5, 'Barbershop', 'https://image.ibb.co/iXoY1J/almost.png', 3),
- (6, 'Nail Salon', 'https://image.ibb.co/iXoY1J/almost.png', 3),
- (7, 'Bar', 'https://image.ibb.co/iXoY1J/almost.png', 4),
- (8, 'Lounge', 'https://image.ibb.co/iXoY1J/almost.png', 4)
+ INSERT INTO subcategories (ID, name, image, category_name)
+ VALUES (1, 'restaurants', 'https://image.ibb.co/iXoY1J/almost.png', 'food'),
+ (2, 'bakerys', 'https://image.ibb.co/iXoY1J/almost.png', 'food'),
+ (3, 'shoe stores', 'https://image.ibb.co/iXoY1J/almost.png', 'stores'),
+ (4, 'clothing', 'https://image.ibb.co/iXoY1J/almost.png', 'stores'),
+ (5, 'barbershop', 'https://image.ibb.co/iXoY1J/almost.png', 'services'),
+ (6, 'nail Salon', 'https://image.ibb.co/iXoY1J/almost.png', 'services'),
+ (7, 'bar', 'https://image.ibb.co/iXoY1J/almost.png', 'nightlife'),
+ (8, 'lounge', 'https://image.ibb.co/iXoY1J/almost.png', 'nightlife')
  ;
 
 --businesses
-INSERT INTO stores (ID, name, type, phone, address, photo, photo2, photo3, blurb, maps, subcategoryID)
- VALUES (1, 'Tulcingo', 'Mexican Food', '718-300-2088', '88-08 Roosevelt Ave', 'https://image.ibb.co/iXoY1J/almost.png', 'https://image.ibb.co/iXoY1J/almost.png','https://image.ibb.co/iXoY1J/almost.png','blurb', 'google maps', 1),
-(2, 'King River', 'Chinese', '718-300-2088', '88-08 Roosevelt Ave', 'https://image.ibb.co/iXoY1J/almost.png', 'https://image.ibb.co/iXoY1J/almost.png','https://image.ibb.co/iXoY1J/almost.png', 'blurb', 'google maps', 1)
+INSERT INTO stores (ID, name, type, phone, address, photo, photo2, photo3, blurb, maps, subcategory_name)
+ VALUES (1, 'Tulcingo', 'Mexican Food', '718-300-2088', '88-08 Roosevelt Ave', 'https://image.ibb.co/iXoY1J/almost.png', 'https://image.ibb.co/iXoY1J/almost.png','https://image.ibb.co/iXoY1J/almost.png','blurb', 'google maps', 'restaurants'),
+(2, 'King River', 'Chinese', '718-300-2088', '88-08 Roosevelt Ave', 'https://image.ibb.co/iXoY1J/almost.png', 'https://image.ibb.co/iXoY1J/almost.png','https://image.ibb.co/iXoY1J/almost.png', 'blurb', 'google maps', 'restaurants')
  ;
 
 CREATE TABLE sub_to_categories (

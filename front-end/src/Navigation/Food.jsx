@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import { Route, Link, Switch } from "react-router-dom";
 import StoreTiles from "./StoreTiles";
-import Subcategories from './Subcategories'
+import Subcategories from './Subcategories';
+import StoreInfo from './StoreInfo';
 
 
 
@@ -12,49 +13,58 @@ class Food extends React.Component {
     super(props);
     this.state = {
       subcategories: [],
+      pickedSubcategoryId: null
     };
   };
 
-renderSubcategories = () => {
-  return (<Subcategories subcategories = {this.state.subcategories} />)
-}
+  handleSubcategoryId = (categoryID) =>{
+    this.setState({pickedSubcategoryId: categoryID})
+  } 
 
-getSubcategories = () => {
-  axios.get('/subcategory/1') 
-   .then((resp) => {
-    console.log('this is the response', resp);
-    this.setState({subcategories: resp.data.data})
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-}
-
-componentDidMount(){
-  this.getSubcategories()
-}
+  renderSubcategories = () => {
+    return (<Subcategories subcategories={this.state.subcategories} 
+      handleSubcategoryId={this.handleSubcategoryId} />)
+  }
 
 
-      render(){
-  const subcategories= this.state.subcategories
-  console.log('this is the categories', subcategories)
+  getSubcategories = () => {
+    axios.get('/food')
+      .then((resp) => {
+        console.log('this is the response', resp);
+        this.setState({ subcategories: resp.data.data })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  componentDidMount() {
+    this.getSubcategories()
+  }
+
+
+  render() {
+    const subcategories = this.state.subcategories
+    console.log('this is the categories', subcategories)
     return (
-      <div className="food">
-      <div className="food-title">FOOD</div>
-      <div className="food-image"></div>
-      <div className="food-description">
-      <span>
-      Jackson Heights has the best food to offer from amazing restaurants, bakerys, street venders blah ablah blah
-     </span>
+      <div className='content'>
+        <div className="food">
+          <div className="food-title">FOOD</div>
+          <div className="food-image"></div>
+          <div className="food-description">
+            <span>
+              Jackson Heights has the best food to offer from amazing restaurants, bakerys, street venders blah ablah blah
+          </span>
+          </div>
+        </div>
+        <Switch>
+            <Route exact path="/food" render={this.renderSubcategories} />
+            <Route path="/food/:subcategory/:storeName" component={StoreInfo} />
+            <Route path="/food/:subcategory" component={StoreTiles} />
+        </Switch>
       </div>
-
-      <Switch>   
-       <Route path="/:subcategory" render={this.renderSubcategories} />
-       <Route path="/food/:" render={this.renderSubcategories} />
-      </Switch>
-    </div>
     );
   };
 }
 
-  export default Food;
+export default Food;

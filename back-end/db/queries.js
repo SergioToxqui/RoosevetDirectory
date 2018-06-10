@@ -1,10 +1,10 @@
 var pgp = require('pg-promise')({});
-var connectionString = process.env.DATABASE_URL;
+var connectionString = 'postgresql://serg@localhost/directory';
 var db = pgp(connectionString);
 
 
 function getSubcategories(req, res, next) {
-    db.any('SELECT * FROM subcategories WHERE categoriesID = $1', req.params.categoryID)
+    db.any('SELECT * FROM subcategories WHERE category_name = $1', req.params.category)
     .then((data) => {
         console.log("data:", data)
         res.status(200).json({
@@ -19,24 +19,9 @@ function getSubcategories(req, res, next) {
 }
 
 
-function getAllFood(req, res, next) {
-    console.log(req.params.subcategoryID)
-    db.any('SELECT * FROM stores WHERE subcategoryID = $1', req.params.subcategoryID)
-    .then((data) => {
-        console.log("data:", data)
-        res.status(200).json({
-            status: 'success',
-            data: data,
-            message: 'Retrieved all subcategories'
-        })
-    })
-    .catch((err) => {
-        return next(err)
-    })
-}
-function getAllStores(req, res, next) {
-    console.log('getall stores is being called')
-    db.any('SELECT * FROM stores WHERE subcategoryID = $1', req.params.subcategoryID)
+function getStoresBySubcategory(req, res, next) {
+    console.log('get all stores is being called')
+    db.any('SELECT * FROM stores WHERE subcategory_name = $1', req.params.subcategory)
     .then((data) => {
         console.log("data:", data)
         res.status(200).json({
@@ -49,39 +34,26 @@ function getAllStores(req, res, next) {
         return next(err)
     })
 }
-function getAllSubToCat(req, res, next) {
-    db.any('SELECT * FROM sub_to_categories')
+
+function getStoreByName(req, res, next) {
+    console.log('get store by name is being called')
+    db.one('SELECT * FROM stores WHERE name = $1', req.params.storeName)
     .then((data) => {
         console.log("data:", data)
         res.status(200).json({
             status: 'success',
             data: data,
-            message: 'Retrieved all sub_to_categories'
+            message: 'Retrieved store'
         })
     })
-    .catch((err) => {
-        return next(err)
-    })
-}
-function getAllStoreToSub(req, res, next) {
-    db.any('SELECT * FROM stores_to_sub')
-    .then((data) => {
-        console.log("data:", data)
-        res.status(200).json({
-            status: 'success',
-            data: data,
-            message: 'Retrieved all teachers'
-        })
-    })
-    .catch((err) => {
+    .catch((err) => {console.log('there was an error', err)
         return next(err)
     })
 }
 
+
 module.exports = {
-    getAllStores,
-    getAllSubToCat,
-    getAllStoreToSub,
-    getAllFood,
-    getSubcategories
+    getSubcategories,
+    getStoresBySubcategory,
+    getStoreByName
 }
