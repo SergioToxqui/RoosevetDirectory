@@ -5,7 +5,7 @@ import StoreTiles from "./StoreTiles";
 import Subcategories from "./Subcategories";
 import StoreInfo from "./StoreInfo";
 
-class Food extends React.Component {
+class Nightlife extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +29,7 @@ class Food extends React.Component {
 
   getSubcategories = () => {
     axios
-      .get("/food")
+      .get("/nightlife")
       .then(resp => {
         console.log("this is the response", resp);
         this.setState({ subcategories: resp.data.data });
@@ -48,24 +48,25 @@ class Food extends React.Component {
     console.log("this is the categories", subcategories);
     return (
       <div className="content">
-        <div className="food">
-          <div className="food-title">FOOD</div>
-          <div className="food-image" />
-          <div className="food-description">
+        <div className="nightlife">
+          <div className="nightlife-title">NIGHTLIFE</div>
+          <div className="nightlife-image" />
+          <div className="nightlife-description">
             <span>
-              Jackson Heights has the best food to offer from amazing
-              restaurants, bakerys, street venders blah ablah blah
+              Jackson Heights has the best bars, clubs, pool halls and lounges.
             </span>
           </div>
         </div>
         <Switch>
-          <Route exact path="/food" render={this.renderSubcategories} />
-          <Route path="/food/:subcategory/:storeName" component={StoreInfo} />
-          <Route path="/food/:subcategory" component={StoreTiles} />
+          <Route exact path="/nightlife" render={this.renderSubcategories} />
+          <Route
+            path="/nightlife/:subcategory/:storeName"
+            component={StoreInfo}
+          />
+          <Route path="/nightlife/:subcategory" component={StoreTiles} />
         </Switch>
       </div>
     );
   }
 }
-
-export default Food;
+export default Nightlife;

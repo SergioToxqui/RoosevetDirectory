@@ -11,16 +11,12 @@ import "./Stylesheets/Stores.css";
 import "./Stylesheets/Services.css";
 import "./Stylesheets/Nightlife.css";
 import "./Stylesheets/Tile.css";
-//import Header from "./Navigation/Header";
-//import Categories from "./Navigation/Categories";
-//import Navigation from "./Navigation/Navigation";
-//import Front from "./Navigation/Front";
+import "./Stylesheets/StoreInfo.css";
 import Home from "./Navigation/Home";
 import Food from "./Navigation/Food";
 import Stores from "./Navigation/Stores";
 import Services from "./Navigation/Services";
 import Nightlife from "./Navigation/Nightlife";
-import StoreTiles from "./Navigation/StoreTiles";
 
 
 class App extends React.Component {
@@ -42,14 +38,17 @@ class App extends React.Component {
       <div className="nightlifeCat"><Link to ='/nightlife'><span>NIGHTLIFE</span></Link></div>
       </div>
       <div className="navigation">
-      <Link to ='/'>DIRECTORY</Link> >  CATEGORY >  SUBCATEGORY > DETAILS PAGE
+      <Link to ='/'>Home</Link> >      
+       <Link to ='/'> CATEGORY > </Link>
+       <Link to ='/'> SUBCATEGORY > </Link>
+       <Link to ='/'> Store > </Link> 
       </div>
       <Switch>
       <Route exact path="/" render={Home} />
       <Route path="/food" component={Food} />
-      <Route path="/stores" render={Stores} />
-      <Route path="/services" render={Services} />
-      <Route path="/nightlife" render={Nightlife} />
+      <Route path="/stores" component={Stores} />
+      <Route path="/services" component={Services} />
+      <Route path="/nightlife" component={Nightlife} />
     </Switch>
       </div>
     );

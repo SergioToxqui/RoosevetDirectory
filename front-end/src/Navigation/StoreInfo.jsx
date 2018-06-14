@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { Link, Route } from "react-router-dom";
 
 class StoreInfo extends React.Component {
   constructor(props) {
@@ -12,11 +11,7 @@ class StoreInfo extends React.Component {
 
   getStore = () => {
     axios
-      .get(
-        `/food/${this.props.match.params.subcategory}/${
-          this.props.match.params.storeName
-        }`
-      )
+      .get(`${this.props.match.url}`)
       .then(resp => {
         console.log("this is the response", resp);
         this.setState({ store: resp.data.data });
@@ -31,21 +26,34 @@ class StoreInfo extends React.Component {
   }
 
   render() {
-    const store = this.state.store;
+    const elem = this.state.store;
     return (
-      <div className="tile">
-        <h1> im yelling </h1>
+      <div className="storeInfoBox">
+        <div className="storeInfoPhoto">
         <img
-          src={store.photo}
-          alt={`/${store.name}`}
-          className="tileImage"
-          id={store.id}
-          onClick={this.handleOnClick}
-        />
-        <div className="tileName"> {store.name}</div>
-        <div className="tileAddress"> {store.address}</div>
-        <div className="tilePhone"> {store.phone}</div>
-      </div>
+          src={elem.photo}
+          alt={`/${elem.name}`}
+          id={elem.id}
+        /></div>
+        <div className="storeInfoPhoto2">
+        <img
+          src={elem.photo2}
+          alt={`/${elem.name}`}
+          id={elem.id}
+        /></div>
+        <div className="storeInfoPhoto3">
+        <img
+          src={elem.photo3}
+          alt={`/${elem.name}`}
+          id={elem.id}
+        /></div>
+        <div className="storeInfoName"> {elem.name}</div>
+        <div className="storeInfoAddress"> {elem.address}</div>
+        <div className="storeInfoPhone"> {elem.phone}</div>
+        <div className="storeInfoBlurb"> {elem.blurb}</div>
+        <div className="storeInfoHours"> {elem.hours}</div>
+        <div className="storeInfoMaps"> {elem.maps}</div>
+       </div>
     );
   }
 }
