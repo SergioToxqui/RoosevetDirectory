@@ -1,10 +1,10 @@
 .header {
     background-color: rgb(255, 255, 255);
     height: 58px;
-    width: 100%;
+    width: 100vw;
     color: black;
     display: grid;
-    grid-template-columns: 5% 15% 60% 20%;
+    grid-template-columns: 5% 15% 75% 5%;
     grid-template-rows: 100%;
     font-family: 'Roboto', sans-serif;
 }
@@ -48,10 +48,10 @@
 }
 
 .header-search{
-    grid-column: 3;
+    grid-column: 4;
     grid-row: 1;
+    align-self: center;
     justify-self: center;
-
 }
 
 .header input[type=text] {

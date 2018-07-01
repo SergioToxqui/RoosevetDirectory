@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import StoreTiles from "./StoreTiles";
 import Subcategories from "./Subcategories";
 import StoreInfo from "./StoreInfo";
@@ -10,7 +10,7 @@ class Food extends React.Component {
     super(props);
     this.state = {
       subcategories: [],
-      pickedSubcategoryId: null
+      pickedSubcategoryId: null,
     };
   }
 
@@ -49,12 +49,12 @@ class Food extends React.Component {
     return (
       <div className="content">
         <div className="food">
-          <div className="food-title">FOOD</div>
+          <Link to=""><div className="food-title"><span>FOOD</span></div></Link>
           <div className="food-image" />
           <div className="food-description">
             <span>
               Jackson Heights has the best food to offer from amazing
-              restaurants, bakerys, street venders blah ablah blah
+             sdqsdqw restaurants, bakerys, street venders blah ablah blah
             </span>
           </div>
         </div>

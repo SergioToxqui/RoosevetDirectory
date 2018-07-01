@@ -26,22 +26,13 @@ class App extends React.Component {
       <div className="header">
       <div className="header-image"><Link to ='/'><img src="https://image.ibb.co/n3Qkin/logo50.png" alt="logo" /></Link></div>
       <div className="header-text">|  <Link to ='/'> Roosevelt Directory</Link></div>
-      <div className="header-search">
-      <input type="text" placeholder="search.." />      
-      <button type="submit" className="header-button"><img src="https://image.ibb.co/jf7heS/search30.png" alt="search" /></button>
-      </div>
+      <div className="header-search"><Link to ='/'><img src="https://image.ibb.co/jf7heS/search30.png"/></Link></div>
       </div>
         <div className="categories">
       <div className="foodCat"><Link to ='/food'><span>FOOD</span></Link></div>
       <div className="storesCat"><Link to ='/stores'><span>STORES</span></Link></div>
       <div className="servicesCat"><Link to ='/services'><span>SERVICES</span></Link></div>
       <div className="nightlifeCat"><Link to ='/nightlife'><span>NIGHTLIFE</span></Link></div>
-      </div>
-      <div className="navigation">
-      <Link to ='/'>Home</Link> >      
-       <Link to ='/'> CATEGORY > </Link>
-       <Link to ='/'> SUBCATEGORY > </Link>
-       <Link to ='/'> Store > </Link> 
       </div>
       <Switch>
       <Route exact path="/" render={Home} />

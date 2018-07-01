@@ -3,15 +3,14 @@
 .categories {
     background: white;
     height: 55px;
-    width: 95%;
+    width: 100vw;
     color:white;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 100%;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5em;
-
-    grid-column-gap: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-size:2.5em;
+    margin-bottom: 1%;
 }
 
 .foodCat{
@@ -22,7 +21,7 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
-    border: solid white 2px;
+    border: solid white 4px;
 }
 
 .foodCat span{
@@ -46,7 +45,7 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
-    border: solid white 2px;
+    border: solid white 4px;
 }
 
 .storesCat span{
@@ -71,7 +70,7 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
-    border: solid white 2px;
+    border: solid white 4px;
 }
 
 .servicesCat span{
@@ -95,7 +94,7 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
-    border: solid white 2px;
+    border: solid white 4px;
 }
 
 .nightlifeCat span{
@@ -112,19 +111,23 @@
 
 a:link {
     color: white;
+    text-decoration: none;
 }
 
 /* visited link */
 a:visited {
     color: white;
+    text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
     color:  white;
+    text-decoration: none;
 }
 
 /* selected link */
 a:active {
     color: white;
+    text-decoration: none;
 }
