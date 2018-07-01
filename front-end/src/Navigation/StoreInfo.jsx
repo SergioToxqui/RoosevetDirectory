@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Iframe from "react-iframe";
+import Iframe from "../react-iframe/index";
 
 class StoreInfo extends React.Component {
   constructor(props) {

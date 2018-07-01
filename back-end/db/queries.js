@@ -1,5 +1,5 @@
 var pgp = require('pg-promise')({});
-var connectionString = 'postgresql://serg@localhost/directory';
+var connectionString = process.env.DATABASE_URL;
 var db = pgp(connectionString);
 
 
