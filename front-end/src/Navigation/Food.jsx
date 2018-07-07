@@ -49,8 +49,9 @@ class Food extends React.Component {
     return (
       <div className="content">
         <div className="food">
-          <Link to=""><div className="food-title"><span>FOOD</span></div></Link>
-          <div className="food-image" />
+        <div className="food-title">
+          <Link to="">FOOD</Link>
+          </div>
           <div className="food-description">
             <span>
               Jackson Heights has the best food to offer from amazing
