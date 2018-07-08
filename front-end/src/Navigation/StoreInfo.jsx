@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Iframe from "../src/react-iframe/index";
+import Iframe from "../react-iframe/index";
 import { Carousel } from "react-responsive-carousel";
 import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'
 
