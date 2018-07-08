@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS directory;
-CREATE DATABASE directory;
+--DROP DATABASE IF EXISTS directory;
+--CREATE DATABASE directory;
 
-\c directory;
+--\c directory;
 
 CREATE TABLE categories (
  ID SERIAL PRIMARY KEY,
