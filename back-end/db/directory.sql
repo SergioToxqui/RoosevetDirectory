@@ -2,14 +2,13 @@
 --CREATE DATABASE directory;
 
 --\c directory;
-DROP TABLE IF EXISTS categories;
+	
+DROP TABLE categories, subcategories, stores, sub_to_categories CASCADE;
 
 CREATE TABLE categories (
  ID SERIAL PRIMARY KEY,
  name VARCHAR NOT NULL
 );
-
-DROP TABLE IF EXISTS subcategories;
 
 CREATE TABLE subcategories (
  ID SERIAL PRIMARY KEY,
@@ -21,7 +20,7 @@ CREATE TABLE subcategories (
 --change this to businesses
 --data imput validation
 --load table comands
-DROP TABLE IF EXISTS stores;
+
 
 CREATE TABLE stores (
  ID SERIAL PRIMARY KEY,
