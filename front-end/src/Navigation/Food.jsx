@@ -5,6 +5,7 @@ import StoreTiles from "./StoreTiles";
 import Subcategories from "./Subcategories";
 import StoreInfo from "./StoreInfo";
 
+
 class Food extends React.Component {
   constructor(props) {
     super(props);
@@ -43,14 +44,19 @@ class Food extends React.Component {
     this.getSubcategories();
   }
 
+
   render() {
+    const url = this.props.location.pathname;
+    const urlFix = url.split("/");
+    urlFix.pop();
     const subcategories = this.state.subcategories;
     console.log("this is the categories", subcategories);
+    console.log("this is the url fix", urlFix.join('/'))
     return (
       <div className="content">
         <div className="food">
         <div className="food-title">
-          <Link to="">FOOD</Link>
+          <Link to={urlFix.join('/')}>{ urlFix.join('/').toUpperCase()}</Link>
           </div>
           <div className="food-description">
             <span>
