@@ -26,7 +26,7 @@ class App extends React.Component {
       <div className="header">
       <div className="header-image"><Link to ='/'><img src="https://image.ibb.co/n3Qkin/logo50.png" alt="logo" /></Link></div>
       <div className="header-text">|  <Link to ='/'> Roosevelt Directory</Link></div>
-      <div className="header-search"><Link to ='/'><img src="https://image.ibb.co/jf7heS/search30.png"/></Link></div>
+      <div className="header-search"><Link to ='/'><img src="https://image.ibb.co/iArQ98/seachbig.png" alt="search"/></Link></div>
       </div>
         <div className="categories">
       <div className="foodCat"><Link to ='/food'><span>FOOD</span></Link></div>
@@ -35,7 +35,7 @@ class App extends React.Component {
       <div className="nightlifeCat"><Link to ='/nightlife'><span>NIGHTLIFE</span></Link></div>
       </div>
       <Switch>
-      <Route exact path="/" render={Home} />
+      <Route exact path="/" component={Home} />
       <Route path="/food" component={Food} />
       <Route path="/stores" component={Stores} />
       <Route path="/services" component={Services} />

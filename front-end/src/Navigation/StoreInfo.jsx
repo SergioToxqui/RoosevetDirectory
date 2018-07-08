@@ -1,6 +1,10 @@
 import React from "react";
 import axios from "axios";
-import Iframe from "../react-iframe/index";
+
+import Iframe from "react-iframe";
+import { Carousel } from "react-responsive-carousel";
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'
+
 
 class StoreInfo extends React.Component {
   constructor(props) {
@@ -30,24 +34,20 @@ class StoreInfo extends React.Component {
     const elem = this.state.store;
     return (
       <div className="storeInfoBox">
-        <div className="storeInfoPhoto">
-        <img
-          src={elem.photo}
-          alt={`/${elem.name}`}
-          id={elem.id}
-        /></div>
-        <div className="storeInfoPhoto2">
-        <img
-          src={elem.photo2}
-          alt={`/${elem.name}`}
-          id={elem.id}
-        /></div>
-        <div className="storeInfoPhoto3">
-        <img
-          src={elem.photo3}
-          alt={`/${elem.name}`}
-          id={elem.id}
-        /></div>
+          <Carousel style={styles} width='50vw'showThumbs={false} className="storeInfoPhotos">
+            <div>
+              <img src={elem.photo} alt="main" />
+              <p className="legend">Legend 1</p>
+            </div>
+            <div>
+            <img src={elem.photo2} alt="second" />
+              <p className="legend">Legend 2</p>
+            </div>
+            <div>
+            <img src={elem.photo3} alt="third" />
+              <p className="legend">Legend 3</p>
+            </div>
+          </Carousel>
         <div className="storeInfoName"> {elem.name}</div>
         <div className="storeInfoAddress"> {elem.address}</div>
         <div className="storeInfoPhone"> {elem.phone}</div>
@@ -67,18 +67,19 @@ class StoreInfo extends React.Component {
         <div className="storeInfoSunH"> {elem.sun}</div>
         <div className="storeInfoBlurb"> {elem.blurb}</div>
 
-
-        <div className="storeInfoMaps"> 
-        <Iframe url="https://maps.google.com/maps?q=8812%20Roosevelt%20Ave=&output=embed"
-        id="myId"
-        className="myClassname"
-        display="initial"
-        position="relative"
-        width='100%' 
-        height="100%"
-        allowFullScreen/>
+        <div className="storeInfoMaps">
+          <Iframe
+            url="https://maps.google.com/maps?q=8812%20Roosevelt%20Ave=&output=embed"
+            id="myId"
+            className="myClassname"
+            display="initial"
+            position="relative"
+            width="100%"
+            height="100%"
+            allowFullScreen
+          />
         </div>
-       </div>
+      </div>
     );
   }
 }

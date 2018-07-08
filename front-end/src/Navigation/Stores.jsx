@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import StoreTiles from "./StoreTiles";
 import Subcategories from "./Subcategories";
 import StoreInfo from "./StoreInfo";
@@ -49,8 +49,9 @@ class Stores extends React.Component {
     return (
       <div className="content">
         <div className="stores">
-          <div className="stores-title">STORES</div>
-          <div className="stores-image" />
+        <div className="stores-title">
+          <Link to="">STORES</Link>
+          </div>
           <div className="stores-description">
             <span>
               Jackson Heights has the best food to offer from amazing sneaker

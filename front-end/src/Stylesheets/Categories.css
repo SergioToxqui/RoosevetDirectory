@@ -10,7 +10,7 @@
     grid-template-rows: 100%;
     font-family: 'Roboto', sans-serif;
     font-size:2.5em;
-    margin-bottom: 1%;
+    margin-bottom: 5px;
 }
 
 .foodCat{
@@ -21,7 +21,7 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
-    border: solid white 4px;
+    border-right-style: solid;
 }
 
 .foodCat span{
@@ -34,7 +34,7 @@
 
 .foodCat:hover { 
     filter: grayscale(0%);
-    border: 0px;
+
 }
 
 .storesCat{
@@ -45,7 +45,7 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
-    border: solid white 4px;
+    border-right-style: solid;
 }
 
 .storesCat span{
@@ -53,12 +53,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-shadow: 2px 2px 8px black;        
+    text-shadow: 2px 2px 8px black;     
+
 }
 
 .storesCat:hover { 
     filter: grayscale(0%);
-    border: 0px;
+
 }
 
 
@@ -70,7 +71,8 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
-    border: solid white 4px;
+    border-right-style: solid;
+
 }
 
 .servicesCat span{
@@ -83,7 +85,7 @@
 
 .servicesCat:hover { 
     filter: grayscale(0%);
-    border: 0px;
+
 }
 
 .nightlifeCat{
@@ -94,7 +96,6 @@
     background-position: center center;
     position: relative;
     filter: grayscale(100%);
-    border: solid white 4px;
 }
 
 .nightlifeCat span{
@@ -106,7 +107,7 @@
 }
 .nightlifeCat:hover { 
     filter: grayscale(0%);
-    border: 0px;
+
 }
 
 a:link {

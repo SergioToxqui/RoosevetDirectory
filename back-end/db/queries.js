@@ -51,9 +51,27 @@ function getStoreByName(req, res, next) {
     })
 }
 
+function searchName(req, res, next) {
+   const nameFix = `%${req.params.searchName.toLowerCase()}%`
+    console.log('search for store by name is being called', nameFix)
+    db.any('SELECT * FROM stores WHERE LOWER (name) LIKE $1 OR LOWER (type) LIKE $1', nameFix)
+    .then((data) => {
+        console.log("data:", data)
+        res.status(200).json({
+            status: 'success',
+            data: data,
+            message: 'Retrieved store'
+        })
+    })
+    .catch((err) => {console.log('there was an error', err)
+        return next(err)
+    })
+}
+
 
 module.exports = {
     getSubcategories,
     getStoresBySubcategory,
-    getStoreByName
+    getStoreByName,
+    searchName
 }
