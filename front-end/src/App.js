@@ -7,6 +7,7 @@ import "./Stylesheets/Navigation.css";
 import "./Stylesheets/Front.css";
 import "./Stylesheets/Food.css";
 import "./Stylesheets/Home.css";
+import "./Stylesheets/Blurb.css";
 import "./Stylesheets/Stores.css";
 import "./Stylesheets/Services.css";
 import "./Stylesheets/Nightlife.css";

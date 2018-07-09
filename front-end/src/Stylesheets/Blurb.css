@@ -1,0 +1,89 @@
+.blurb{
+    grid-column: 2;
+    grid-row: 2;
+    color: black;
+    font-size: 1.5em;
+    text-align: center;
+    align-self: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    height: 75px;
+    text-align: center;
+vertical-align: middle;
+line-height: 75px;   
+}
+
+.blurbGrid{
+    background-color: #ffffff;
+    height: 200px;
+    width:100%;
+    color: black;
+    display: grid;
+    grid-template-columns: 5% 30% 30% 30% 5%; 
+    grid-template-rows: 80% 20%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
+
+.leftImage{
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+    align-self: center;
+}
+
+.middleImage{
+    grid-column: 3;
+    grid-row: 1;
+    text-align: center;
+    align-self: center;
+}
+
+.rightImage{
+    grid-column: 4;
+    grid-row: 1;
+    text-align: center;
+    align-self: center;
+}
+
+.left{
+    grid-column: 2;
+    grid-row: 2;
+    text-align: center;
+    align-self: center;
+}
+
+.middle{
+    grid-column: 3;
+    grid-row: 2;
+    text-align: center;
+    align-self: center;
+}
+
+.right{
+    grid-column: 4;
+    grid-row: 2;
+    text-align: center;
+    align-self: center;
+}
+
+.home-top-text{
+    grid-column: 2;
+    grid-row: 2;
+    color:white;
+    font-size: 1.2em;
+    text-align: center;
+    align-self: center;
+    text-shadow: 1px 1px 20px black;
+}
+
+.home-search{
+    grid-column: 2;
+    grid-row: 4;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: black;
+    padding: 0;
+    border-radius: 5px;
+    text-align: center;
+}
