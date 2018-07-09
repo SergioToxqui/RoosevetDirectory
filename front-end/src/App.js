@@ -18,6 +18,7 @@ import Food from "./Navigation/Food";
 import Stores from "./Navigation/Stores";
 import Services from "./Navigation/Services";
 import Nightlife from "./Navigation/Nightlife";
+import About from "./Navigation/About";
 
 
 class App extends React.Component {
@@ -27,7 +28,8 @@ class App extends React.Component {
       <div className="header">
       <div className="header-image"><Link to ='/'><img src="https://image.ibb.co/n3Qkin/logo50.png" alt="logo" /></Link></div>
       <div className="header-text">|  <Link to ='/'> Roosevelt Directory</Link></div>
-      <div className="header-search"><Link to ='/'><img src="https://image.ibb.co/iArQ98/seachbig.png" alt="search"/></Link></div>
+      <div className="header-text2"><Link to ='/about'> About Us </Link>|</div>
+      <div className="header-search"><Link to ='/'><img src="https://image.ibb.co/fxtQE8/search_copy.png" alt="search"/></Link></div>
       </div>
         <div className="categories">
       <div className="foodCat"><Link to ='/food'><span>FOOD</span></Link></div>
@@ -41,6 +43,7 @@ class App extends React.Component {
       <Route path="/stores" component={Stores} />
       <Route path="/services" component={Services} />
       <Route path="/nightlife" component={Nightlife} />
+      <Route path="/about" component={About} />
     </Switch>
       </div>
     );

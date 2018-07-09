@@ -44,13 +44,16 @@ class Nightlife extends React.Component {
   }
 
   render() {
+    const url = this.props.location.pathname;
+    const urlFix = url.split("/");
+    urlFix.pop();
     const subcategories = this.state.subcategories;
     console.log("this is the categories", subcategories);
     return (
       <div className="content">
         <div className="nightlife">
-        <div className="nightlife-title">
-          <Link to="">NIGHTLIFE</Link>
+          <div className="nightlife-title">
+          <Link to={urlFix.join("/")}>{urlFix.join("/").toUpperCase()}</Link>
           </div>
           <div className="nightlife-description">
             <span>

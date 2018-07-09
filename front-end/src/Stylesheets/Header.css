@@ -4,7 +4,7 @@
     width: 100vw;
     color: black;
     display: grid;
-    grid-template-columns: 5% 15% 75% 5%;
+    grid-template-columns: 5% 15% 68% 7% 5%;
     grid-template-rows: 100%;
     font-family: 'Roboto', sans-serif;
 }
@@ -47,30 +47,46 @@
     text-decoration: none;
 }
 
-.header-search{
+.header-text2{
     grid-column: 4;
     grid-row: 1;
     align-self: center;
-    justify-self: center;
+    font-family: 'Special Elite', sans-serif;
+    font-size: 18px;
 }
 
-.header input[type=text] {
-    padding: 9px;
-    margin-top: 8px;
-    font-size: 16px;
-    border: #833c7d 2px solid;
+.header-text2 a:link {
+    color: black;
+    text-decoration: none;
 }
 
-.header-button{
-    margin-top: 8px;
-    font-size: 17px;
-    float: right;
-    cursor: pointer;
-    border-color:white;
-    border-style: solid;
-    border-width: 0px;
-    padding: 0px 0px 0px;
+/* visited link */
+.header-text2 a:visited {
+    color: black;
+    text-decoration: none;
 }
+
+/* mouse over link */
+.header-text2 a:hover {
+    color:  black;
+    text-decoration: none;
+}
+
+/* selected link */
+.header-text2 a:active {
+    color: black;
+    text-decoration: none;
+}
+
+.header-search{
+    grid-column: 5;
+    grid-row: 1;
+    align-self: center;
+}
+
+
+
+
 
 
  
