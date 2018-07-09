@@ -44,13 +44,16 @@ class Stores extends React.Component {
   }
 
   render() {
+    const url = this.props.location.pathname;
+    const urlFix = url.split("/");
+    urlFix.pop();
     const subcategories = this.state.subcategories;
     console.log("this is the categories", subcategories);
     return (
       <div className="content">
         <div className="stores">
         <div className="stores-title">
-          <Link to="">STORES</Link>
+        <Link to={urlFix.join("/")}>{urlFix.join("/").toUpperCase()}</Link>
           </div>
           <div className="stores-description">
             <span>

@@ -44,13 +44,16 @@ class Services extends React.Component {
   }
 
   render() {
+    const url = this.props.location.pathname;
+    const urlFix = url.split("/");
+    urlFix.pop();
     const subcategories = this.state.subcategories;
     console.log("this is the categories", subcategories);
     return (
       <div className="content">
         <div className="services">
         <div className="services-title">
-          <Link to="">SERVICES</Link>
+        <Link to={urlFix.join("/")}>{urlFix.join("/").toUpperCase()}</Link>
           </div>
           <div className="services-description">
             <span>
