@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import StoreTiles from "./StoreTiles";
 import Subcategories from "./Subcategories";
 import StoreInfo from "./StoreInfo";
@@ -48,10 +48,11 @@ class Services extends React.Component {
     console.log("this is the categories", subcategories);
     return (
       <div className="content">
-        <div className="service">
-          <div className="service-title">SERVICES</div>
-          <div className="service-image" />
-          <div className="service-description">
+        <div className="services">
+        <div className="services-title">
+          <Link to="">SERVICES</Link>
+          </div>
+          <div className="services-description">
             <span>
               Jackson Heights has the best food to offer from amazing nail
               salons, barbershops and other

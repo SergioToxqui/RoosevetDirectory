@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import StoreTiles from "./StoreTiles";
 import Subcategories from "./Subcategories";
 import StoreInfo from "./StoreInfo";
@@ -49,8 +49,9 @@ class Nightlife extends React.Component {
     return (
       <div className="content">
         <div className="nightlife">
-          <div className="nightlife-title">NIGHTLIFE</div>
-          <div className="nightlife-image" />
+        <div className="nightlife-title">
+          <Link to="">NIGHTLIFE</Link>
+          </div>
           <div className="nightlife-description">
             <span>
               Jackson Heights has the best bars, clubs, pool halls and lounges.
