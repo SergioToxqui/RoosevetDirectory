@@ -204,16 +204,18 @@
 
 @media screen and (max-width: 450px) {
   .storeInfoBox {
-    height: 77vh;
+    height: 60vh;
     width: 100vw;
     display: grid;
     grid-template-columns: 14% 14% 15% 7% 7% 15% 14% 14%;
-    grid-template-rows: 5% 3.5% 3.5% 3% 45% 40%;
+    grid-template-rows: 5% 3.5% 3.5% 3% 55% 30%;
   }
 
   .storeInfoPhotos {
     grid-column: 1 / 5;
     grid-row: 5;
+    border-top: solid white;
+    border-bottom: solid white;
   }
 
   .storeInfoName {
