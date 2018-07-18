@@ -1,89 +1,154 @@
-.blurb{
-    grid-column: 2;
-    grid-row: 2;
-    color: black;
-    font-size: 1.5em;
-    text-align: center;
-    align-self: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bolder;
-    height: 100px;
-    text-align: center;
-vertical-align: middle;
-line-height: 75px;   
+.blurb {
+
+  color: black;
+  font-size: 1.5em;
+  text-align: center;
+  align-self: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  height: 75px;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 25px;
 }
 
-.blurbGrid{
+.blurbGrid {
+  background-color: #ffffff;
+  height: 200px;
+  width: 100%;
+  color: black;
+  display: grid;
+  grid-template-columns: 5% 30% 30% 30% 5%;
+  grid-template-rows: 80% 20%;
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+}
+
+.leftImage {
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+  align-self: center;
+}
+
+.middleImage {
+  grid-column: 3;
+  grid-row: 1;
+  text-align: center;
+  align-self: center;
+}
+
+.rightImage {
+  grid-column: 4;
+  grid-row: 1;
+  text-align: center;
+  align-self: center;
+}
+
+.left {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+  align-self: center;
+}
+
+.middle {
+  grid-column: 3;
+  grid-row: 2;
+  text-align: center;
+  align-self: center;
+}
+
+.right {
+  grid-column: 4;
+  grid-row: 2;
+  text-align: center;
+  align-self: center;
+}
+
+.home-top-text {
+  grid-column: 2;
+  grid-row: 2;
+  color: white;
+  font-size: 1.2em;
+  text-align: center;
+  align-self: center;
+  text-shadow: 1px 1px 20px black;
+}
+
+.home-search {
+  grid-column: 2;
+  grid-row: 4;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  color: black;
+  padding: 0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+@media screen and (max-width: 450px) {
+  .blurb {
+    color: black;
+    font-size: 1em;
+    line-height: none;
+    margin-top: 10px;
+    height:25px;
+    margin-bottom: 10px;
+  }
+
+  .blurbGrid {
     background-color: #ffffff;
-    height: 200px;
-    width:100%;
+    height: 100vh;
+    width: 100vw;
     color: black;
     display: grid;
-    grid-template-columns: 5% 30% 30% 30% 5%; 
-    grid-template-rows: 80% 20%;
-    font-family: 'Roboto', sans-serif;
+    grid-template-columns: 100%;
+    grid-template-rows: 28% 5% 29% 5% 28% 5%;
+    font-family: "Roboto", sans-serif;
     font-weight: bolder;
-}
+  }
 
-.leftImage{
-    grid-column: 2;
+  .leftImage {
+    grid-column: 1;
     grid-row: 1;
     text-align: center;
     align-self: center;
-}
+  }
 
-.middleImage{
-    grid-column: 3;
-    grid-row: 1;
+  .middleImage {
+    grid-column: 1;
+    grid-row: 3;
     text-align: center;
     align-self: center;
-}
+  }
 
-.rightImage{
-    grid-column: 4;
-    grid-row: 1;
+  .rightImage {
+    grid-column: 1;
+    grid-row: 5;
     text-align: center;
     align-self: center;
-}
+  }
 
-.left{
-    grid-column: 2;
+  .left {
+    grid-column: 1;
     grid-row: 2;
     text-align: center;
     align-self: center;
-}
+  }
 
-.middle{
-    grid-column: 3;
-    grid-row: 2;
-    text-align: center;
-    align-self: center;
-}
-
-.right{
-    grid-column: 4;
-    grid-row: 2;
-    text-align: center;
-    align-self: center;
-}
-
-.home-top-text{
-    grid-column: 2;
-    grid-row: 2;
-    color:white;
-    font-size: 1.2em;
-    text-align: center;
-    align-self: center;
-    text-shadow: 1px 1px 20px black;
-}
-
-.home-search{
-    grid-column: 2;
+  .middle {
+    grid-column: 1;
     grid-row: 4;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
-    color: black;
-    padding: 0;
-    border-radius: 5px;
     text-align: center;
+    align-self: center;
+  }
+
+  .right {
+    grid-column: 1;
+    grid-row: 6;
+    text-align: center;
+    align-self: center;
+  }
+
 }

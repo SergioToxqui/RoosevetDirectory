@@ -1,134 +1,166 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400');
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400");
 
 .categories {
-    background: white;
-    height: 55px;
-    width: 100vw;
-    color:white;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 100%;
-    font-family: 'Roboto', sans-serif;
-    font-size:2.5em;
-    margin-bottom: 5px;
+  background: white;
+  height: 55px;
+  width: 100vw;
+  color: white;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 2em;
+  margin-bottom: 5px;
 }
 
-.foodCat{
-    grid-column: 1;
-    grid-row: 1;
-    background-image: url(https://image.ibb.co/n8qvZS/food.png);
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    filter: grayscale(100%);
-    border-right-style: solid;
+.foodCat {
+  grid-column: 1;
+  grid-row: 1;
+  background-image: url(https://image.ibb.co/n8qvZS/food.png);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  filter: grayscale(100%);
+  border-right-style: solid;
 }
 
-.foodCat span{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 2px 2px 8px black;
+.foodCat span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 8px black;
 }
 
-.foodCat:hover { 
-    filter: grayscale(0%);
-
+.foodCat:hover {
+  filter: grayscale(0%);
 }
 
-.storesCat{
-    grid-column: 2;
-    grid-row: 1;
-    background-image: url(https://image.ibb.co/iafEeS/stores.png);
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    filter: grayscale(100%);
-    border-right-style: solid;
+.storesCat {
+  grid-column: 2;
+  grid-row: 1;
+  background-image: url(https://image.ibb.co/iafEeS/stores.png);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  filter: grayscale(100%);
+  border-right-style: solid;
 }
 
-.storesCat span{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 2px 2px 8px black;     
-
+.storesCat span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 8px black;
 }
 
-.storesCat:hover { 
-    filter: grayscale(0%);
-
+.storesCat:hover {
+  filter: grayscale(0%);
 }
 
-
-.servicesCat{
-    grid-column: 3;
-    grid-row: 1;
-    background-image: url(https://image.ibb.co/jW8BR7/services.png);
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    filter: grayscale(100%);
-    border-right-style: solid;
-
+.servicesCat {
+  grid-column: 3;
+  grid-row: 1;
+  background-image: url(https://image.ibb.co/jW8BR7/services.png);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  filter: grayscale(100%);
+  border-right-style: solid;
 }
 
-.servicesCat span{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 2px 2px 8px black;
+.servicesCat span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 8px black;
 }
 
-.servicesCat:hover { 
-    filter: grayscale(0%);
-
+.servicesCat:hover {
+  filter: grayscale(0%);
 }
 
-.nightlifeCat{
-    grid-column: 4;
-    grid-row: 1;
-    background-image: url(https://image.ibb.co/iEJ0KS/nightlife.png);
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    filter: grayscale(100%);
+.nightlifeCat {
+  grid-column: 4;
+  grid-row: 1;
+  background-image: url(https://image.ibb.co/iEJ0KS/nightlife.png);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  filter: grayscale(100%);
 }
 
-.nightlifeCat span{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-shadow: 2px 2px 8px black;
+.nightlifeCat span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 8px black;
 }
-.nightlifeCat:hover { 
-    filter: grayscale(0%);
-
+.nightlifeCat:hover {
+  filter: grayscale(0%);
 }
 
 a:link {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 /* visited link */
 a:visited {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
-    color:  white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 /* selected link */
 a:active {
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 450px) {
+
+  .categories {
+    background: white;
+    height: 110px;
+    width: 100vw;
     color: white;
-    text-decoration: none;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
+  .foodCat {
+    grid-column: 1;
+    grid-row: 1;
+    border-bottom-style: solid;
+  }
+  .storesCat {
+    grid-column: 2;
+    grid-row: 1;
+    border-bottom-style: solid;
+    border-right-style: none;
+  }
+
+  .servicesCat {
+    grid-column: 1;
+    grid-row: 2;
+
+  }
+
+  .nightlifeCat {
+    grid-column: 2;
+    grid-row: 2;
+
+  }
 }

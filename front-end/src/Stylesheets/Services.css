@@ -1,21 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400");
 
-.services{
+.services {
   width: 100vw;
   height: 55px;
   display: grid;
-  grid-template-columns: 50% 50%; 
+  grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: auto;
 }
 
-.services-title{
-  grid-column:  1;
+.services-title {
+  grid-column: 1;
   grid-row: 1;
   font-size: 2.5em;
   padding: 1%;
-  text-align: center;
   text-shadow: 1px 1px 4px black;
   color: black;
   background-image: url(https://cdn.shopify.com/s/files/1/2487/8862/files/guilherme-petri-602659-unsplash_1_1500x.jpg);
@@ -23,15 +22,22 @@
   background-size: cover;
   background-position: center center;
   border-right: solid white;
-
+  text-align: center;
+  vertical-align: middle;
+  line-height: 55px;
 }
 
-
-.services-description{
+.services-description {
   grid-column: 2;
   grid-row: 1;
   padding: 1%;
   text-align: center;
-  background-color:black;
-  color:white;
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width: 450px) {
+  .services-title {
+    font-size: 1em;
+  }
 }

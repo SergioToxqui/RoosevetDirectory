@@ -9,18 +9,46 @@
 
 .tile {
   width: 100%;
-  justify-self: center;
   align-content: center;
   text-align: center;
   color: black;
-  padding: 2%;
 }
 
 .tileImage {
-  width: 200px;
-  height: 200px;
+  width: 98%;
+  height: 98%;
 }
 
 .tileName {
-  font-size: 20px;
+  font-size: 1em;
+}
+
+
+@media screen and (max-width: 450px) {
+  .tileBox {
+    width: 100%;
+    height: 100%;
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .tile {
+    width: 100%;
+    justify-self: center;
+    align-content: center;
+    text-align: center;
+    color: black;
+
+  }
+  
+  .tileImage {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .tileName {
+    font-size: 20px;
+  }
 }
