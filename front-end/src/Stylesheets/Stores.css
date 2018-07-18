@@ -1,42 +1,43 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400');
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400");
 
-
-.stores{
-    width: 100vw;
-    height: 55px;
-    display: grid;
-    grid-template-columns: 50% 50%; 
-    grid-template-rows: 100%;
-    font-family: 'Roboto', sans-serif;
-    margin: auto;
+.stores {
+  width: 100vw;
+  height: 55px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  font-family: "Roboto", sans-serif;
+  margin: auto;
 }
 
-.stores-title{
-    grid-column:  1;
-    grid-row: 1;
-    font-size: 2.5em;
-    padding: 1%;
-    text-align: center;
-    text-shadow: 1px 1px 4px black;
-    color: black;
-    background-image: url(https://image.ibb.co/iafEeS/stores.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    border-right: solid white;
-
+.stores-title {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 2em;
+  padding: 1%;
+  text-shadow: 1px 1px 4px black;
+  color: black;
+  background-image: url(https://image.ibb.co/iafEeS/stores.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-right: solid white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 55px;
 }
 
-
-.stores-description{
-    grid-column: 2;
-    grid-row: 1;
-    padding: 1%;
-    text-align: center;
-    background-color:black;
-    color:white;
+.stores-description {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 1%;
+  text-align: center;
+  background-color: black;
+  color: white;
 }
 
-
-
-
+@media screen and (max-width: 450px) {
+    .stores-title {
+      font-size: 1em;
+    }
+  }

@@ -59,7 +59,6 @@ class Food extends React.Component {
           <div className="food-description">
             <span>
               Jackson Heights has the best food to offer from amazing sdqsdqw
-              restaurants, bakerys, street venders blah ablah blah
             </span>
           </div>
         </div>
