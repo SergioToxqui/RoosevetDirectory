@@ -8,16 +8,15 @@
   grid-template-rows: 5% 3.5% 3.5% 3.5% 3.5% 31% 50%;
   margin: auto;
   font-family: "Roboto", sans-serif;
-  margin-top:5px;
+  margin-top: 5px;
 }
 
 .storeInfoPhotos {
-  grid-column: 1 ;
+  grid-column: 1;
   grid-row: 1 / 8;
   overflow: hidden;
   border-right: solid white;
 }
-
 
 .storeInfoName {
   grid-column: 2 / 9;
@@ -54,7 +53,6 @@
 .storeInfoMaps {
   grid-column: 2 / 9;
   grid-row: 7;
-
 }
 
 .storeInfoMon {
@@ -193,7 +191,6 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-
 }
 
 .storeInfoSunH {
@@ -203,5 +200,125 @@
   align-items: center;
   justify-content: center;
   background-color: lightgray;
+}
 
+@media screen and (max-width: 450px) {
+  .storeInfoBox {
+    height: 77vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 14% 14% 15% 7% 7% 15% 14% 14%;
+    grid-template-rows: 5% 3.5% 3.5% 3% 45% 40%;
+  }
+
+  .storeInfoPhotos {
+    grid-column: 1 / 5;
+    grid-row: 5;
+  }
+
+  .storeInfoName {
+    grid-column: 1 / 9;
+    grid-row: 1;
+  }
+
+  .storeInfoAddress {
+    grid-column: 1 / 5;
+    grid-row: 2;
+  }
+
+  .storeInfoPhone {
+    grid-column: 5 / 9;
+    grid-row: 2;
+    margin: auto;
+  }
+
+  .storeInfoBlurb {
+    grid-column: 5 / 9;
+    grid-row: 5;
+    margin: auto;
+  }
+
+  .storeInfoMaps {
+    grid-column: 1 / 9;
+    grid-row: 6;
+  }
+
+  .storeInfoMon {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: .8em;
+  }
+
+  .storeInfoMonH {
+    grid-column: 1;
+    grid-row: 4;
+    font-size: .8em;
+  }
+
+  .storeInfoTues {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: .8em;
+  }
+
+  .storeInfoTuesH {
+    grid-column: 2;
+    grid-row: 4;
+    font-size: .8em;
+  }
+  .storeInfoWed {
+    grid-column: 3;
+    grid-row: 3;
+    font-size: .8em;
+  }
+
+  .storeInfoWedH {
+    grid-column: 3;
+    grid-row: 4;
+    font-size: .8em;
+  }
+  .storeInfoThurs {
+    grid-column: 4 / 6;
+    grid-row: 3;
+    font-size: .8em;
+  }
+
+  .storeInfoThursH {
+    grid-column: 4 / 6;
+    grid-row: 4;
+    font-size: .8em;
+  }
+  .storeInfoFri {
+    grid-column: 6;
+    grid-row: 3;
+    font-size: .8em;
+  }
+
+  .storeInfoFriH {
+    grid-column: 6;
+    grid-row: 4;
+    font-size: .8em;
+  }
+  .storeInfoSat {
+    grid-column: 7;
+    grid-row: 3;
+    font-size: .8em;
+  }
+
+  .storeInfoSatH {
+    grid-column: 7;
+    grid-row: 4;
+    font-size: .8em;
+  }
+  .storeInfoSun {
+    grid-column: 8;
+    grid-row: 3;
+    font-size: .8em;
+  }
+
+  .storeInfoSunH {
+    grid-column: 8;
+    grid-row: 4;
+    font-size: .8em;
+  }
 }

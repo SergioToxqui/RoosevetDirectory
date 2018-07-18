@@ -37,15 +37,15 @@ class StoreInfo extends React.Component {
           <Carousel style={styles} width='50vw'showThumbs={false} className="storeInfoPhotos">
             <div>
               <img src={elem.photo} alt="main" />
-              <p className="legend">Legend 1</p>
+              <p className={elem.name}>{elem.name}</p>
             </div>
             <div>
             <img src={elem.photo2} alt="second" />
-              <p className="legend">Legend 2</p>
+              <p className={elem.name}>{elem.name}</p>
             </div>
             <div>
             <img src={elem.photo3} alt="third" />
-              <p className="legend">Legend 3</p>
+              <p className={elem.name}>{elem.name}</p>
             </div>
           </Carousel>
         <div className="storeInfoName"> {elem.name}</div>
