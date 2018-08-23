@@ -1,27 +1,51 @@
 .tileBox {
   width: 100%;
   height: 100%;
-  margin-top: 10px;
+  margin-top: 8px;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   font-family: 'Roboto', sans-serif;
+  align-content: center;
+  text-align: center;
 }
 
 .tile {
-  width: 100%;
+  height: 25%;
+  width: 99%;
+  color: black;
   align-content: center;
   text-align: center;
-  color: black;
+}
+.tile:hover {
+  font-size: 1em;
+  background-color: rgb(255, 250, 187);
 }
 
+
 .tileImage {
-  width: 98%;
-  height: 98%;
+  height: 250px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  filter: grayscale(75%);
+
 }
+
+.tileImage:hover{
+  filter: grayscale(0%);
+}
+
+ .tileImage img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+ }
 
 .tileName {
   font-size: 1em;
 }
+
 
 
 @media screen and (max-width: 450px) {

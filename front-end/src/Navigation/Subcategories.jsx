@@ -16,12 +16,13 @@ class Subcategories extends React.Component {
           return (
             <Link to={`/${elem.category_name}/${elem.name}`}>
               <div className="tile" key={i}>
+                 <div className="tileImage">
                 <img
                   src={elem.image}
                   alt={`${elem.name}`}
-                  className="tileImage"
                   id={elem.id}
                 />
+                </div>
                 <div className="tileName"> {elem.name}</div>
               </div>
             </Link>
