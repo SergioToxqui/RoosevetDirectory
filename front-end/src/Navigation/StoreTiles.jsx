@@ -33,15 +33,20 @@ class StoreTiles extends React.Component {
       <div className="tileBox">
         {this.state.stores.map((elem, i) => {
           return (
-            <Link to={`/${elem.category_name}/${elem.subcategory_name}/${elem.name}`}>
+            <Link
+              to={`/${elem.category_name}/${elem.subcategory_name}/${
+                elem.name
+              }`}
+            >
               <div className="tile" key={i}>
-                <img
-                  src={elem.photo}
-                  alt={`${elem.name}`}
-                  className="tileImage"
-                  id={elem.id}
-                  onClick={this.handleOnClick}
-                />
+                <div className="tileImage">
+                  <img
+                    src={elem.photo}
+                    alt={`${elem.name}`}
+                    id={elem.id}
+                    onClick={this.handleOnClick}
+                  />
+                </div>
                 <div className="tileName"> {elem.name}</div>
                 <div className="tileAddress"> {elem.type}</div>
                 <div className="tileAddress"> {elem.address}</div>
