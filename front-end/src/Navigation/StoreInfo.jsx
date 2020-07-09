@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Iframe from "../react-iframe/index";
+import Iframe from "react-iframe";
 import { Carousel } from "react-responsive-carousel";
 import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'
 
@@ -33,20 +33,20 @@ class StoreInfo extends React.Component {
     const elem = this.state.store;
     return (
       <div className="storeInfoBox">
-          <Carousel style={styles} width='50vw'showThumbs={false} className="storeInfoPhotos">
-            <div>
-              <img src={elem.photo} alt="main" />
-              <p className={elem.name}>{elem.name}</p>
-            </div>
-            <div>
+        <Carousel style={styles} width='50vw' showThumbs={false} className="storeInfoPhotos">
+          <div>
+            <img src={elem.photo} alt="main" />
+            <p className={elem.name}>{elem.name}</p>
+          </div>
+          <div>
             <img src={elem.photo2} alt="second" />
-              <p className={elem.name}>{elem.name}</p>
-            </div>
-            <div>
+            <p className={elem.name}>{elem.name}</p>
+          </div>
+          <div>
             <img src={elem.photo3} alt="third" />
-              <p className={elem.name}>{elem.name}</p>
-            </div>
-          </Carousel>
+            <p className={elem.name}>{elem.name}</p>
+          </div>
+        </Carousel>
         <div className="storeInfoName"> {elem.name}</div>
         <div className="storeInfoAddress"> {elem.address}</div>
         <div className="storeInfoPhone"> {elem.phone}</div>
