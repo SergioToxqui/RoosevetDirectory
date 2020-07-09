@@ -11,7 +11,6 @@
     display: grid;
     grid-template-columns: 25% 50% 25%;
     grid-template-rows: 25% 50% 25%;
-    background-image: url();
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
