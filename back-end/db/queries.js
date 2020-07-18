@@ -37,7 +37,22 @@ function getStoresBySubcategory(req, res, next) {
 
 function getStoreByName(req, res, next) {
     console.log('get store by name is being called')
-    db.one('SELECT * FROM stores WHERE name = $1', req.params.storeName)
+    let query = `
+        SELECT 
+            stores.id,
+            name,
+            phone,
+            address,
+            description, 
+            (SELECT ARRAY_AGG(json_build_object('day', day, 'open_time', open_time, 'close_time', close_time)) FROM stores_schedules WHERE stores_schedules.store_id = stores.id) AS schedule,
+            (SELECT ARRAY_AGG(json_build_object('url', url, 'type', type)) FROM objects WHERE objects.store_id = stores.id) AS photos
+        FROM stores 
+        JOIN stores_schedules ON stores.id = stores_schedules.store_id
+        WHERE name = $1
+        GROUP BY(stores.id)
+ `
+
+    db.one(query, req.params.storeName)
     .then((data) => {
         console.log("data:", data)
         res.status(200).json({
