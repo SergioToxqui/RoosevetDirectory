@@ -1,0 +1,320 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 12.3
+-- Dumped by pg_dump version 12.3
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: categories; Type: TABLE; Schema: public; Owner: alejandro
+--
+
+CREATE TABLE public.categories (
+    id integer NOT NULL,
+    name character varying NOT NULL
+);
+
+
+ALTER TABLE public.categories OWNER TO alejandro;
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE; Schema: public; Owner: alejandro
+--
+
+CREATE SEQUENCE public.categories_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.categories_id_seq OWNER TO alejandro;
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: alejandro
+--
+
+ALTER SEQUENCE public.categories_id_seq OWNED BY public.categories.id;
+
+
+--
+-- Name: stores; Type: TABLE; Schema: public; Owner: alejandro
+--
+
+CREATE TABLE public.stores (
+    id integer NOT NULL,
+    name character varying NOT NULL,
+    type character varying,
+    phone character varying,
+    address character varying,
+    mon character varying,
+    tues character varying,
+    wed character varying,
+    thurs character varying,
+    fri character varying,
+    sat character varying,
+    sun character varying,
+    photo character varying,
+    photo2 character varying,
+    photo3 character varying,
+    blurb character varying,
+    maps character varying,
+    category_name character varying,
+    subcategory_name character varying
+);
+
+
+ALTER TABLE public.stores OWNER TO alejandro;
+
+--
+-- Name: stores_id_seq; Type: SEQUENCE; Schema: public; Owner: alejandro
+--
+
+CREATE SEQUENCE public.stores_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.stores_id_seq OWNER TO alejandro;
+
+--
+-- Name: stores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: alejandro
+--
+
+ALTER SEQUENCE public.stores_id_seq OWNED BY public.stores.id;
+
+
+--
+-- Name: sub_to_categories; Type: TABLE; Schema: public; Owner: alejandro
+--
+
+CREATE TABLE public.sub_to_categories (
+    subcategories_id integer,
+    categories_id integer
+);
+
+
+ALTER TABLE public.sub_to_categories OWNER TO alejandro;
+
+--
+-- Name: subcategories; Type: TABLE; Schema: public; Owner: alejandro
+--
+
+CREATE TABLE public.subcategories (
+    id integer NOT NULL,
+    name character varying NOT NULL,
+    image character varying,
+    category_name character varying
+);
+
+
+ALTER TABLE public.subcategories OWNER TO alejandro;
+
+--
+-- Name: subcategories_id_seq; Type: SEQUENCE; Schema: public; Owner: alejandro
+--
+
+CREATE SEQUENCE public.subcategories_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.subcategories_id_seq OWNER TO alejandro;
+
+--
+-- Name: subcategories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: alejandro
+--
+
+ALTER SEQUENCE public.subcategories_id_seq OWNED BY public.subcategories.id;
+
+
+--
+-- Name: categories id; Type: DEFAULT; Schema: public; Owner: alejandro
+--
+
+ALTER TABLE ONLY public.categories ALTER COLUMN id SET DEFAULT nextval('public.categories_id_seq'::regclass);
+
+
+--
+-- Name: stores id; Type: DEFAULT; Schema: public; Owner: alejandro
+--
+
+ALTER TABLE ONLY public.stores ALTER COLUMN id SET DEFAULT nextval('public.stores_id_seq'::regclass);
+
+
+--
+-- Name: subcategories id; Type: DEFAULT; Schema: public; Owner: alejandro
+--
+
+ALTER TABLE ONLY public.subcategories ALTER COLUMN id SET DEFAULT nextval('public.subcategories_id_seq'::regclass);
+
+
+--
+-- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: alejandro
+--
+
+COPY public.categories (id, name) FROM stdin;
+1	food
+2	stores
+3	services
+4	nightlife
+\.
+
+
+--
+-- Data for Name: stores; Type: TABLE DATA; Schema: public; Owner: alejandro
+--
+
+COPY public.stores (id, name, type, phone, address, mon, tues, wed, thurs, fri, sat, sun, photo, photo2, photo3, blurb, maps, category_name, subcategory_name) FROM stdin;
+1	Tacos Al Suadero	Mexican Food	 (718) 505-1025	8812 Roosevelt Ave	7am - 5am	7am - 5am	7am - 5am	7am - 5am	7am - 5am	7am - 5am	7am - 5am	https://s3-media3.fl.yelpcdn.com/bphoto/VWIaD4Y2_-2xnKFZbisH7A/o.jpg	https://s3-media4.fl.yelpcdn.com/bphoto/RryLfgiE7EV6k2AsfViT5A/o.jpg	https://s3-media1.fl.yelpcdn.com/bphoto/DW1LaN66hAym4Oh-Ax_isw/o.jpg	The interior of the place is as festive as other similarly themed restaurants. There are ornaments, ribbons, and all sorts of colorful articles from wall to wall and across the ceiling. Seating is just enough for a few groups, but even then there isnt much room for dining here. As Spanish songs play in the background, its easy to feel like one is no longer in Queens.	https://www.google.com/maps/place/87-21+Roosevelt+Ave,+Jackson+Heights,+NY+11372	food	restaurants
+2	King River	Chinesse Food	 (718) 505-1025	8812 Roosevelt Ave	7am - 5am	7am - 5am	7am - 5am	7am - 5am	7am - 5am	7am - 5am	7am - 5am	https://s3-media3.fl.yelpcdn.com/bphoto/VWIaD4Y2_-2xnKFZbisH7A/o.jpg	https://s3-media4.fl.yelpcdn.com/bphoto/RryLfgiE7EV6k2AsfViT5A/o.jpg	https://s3-media1.fl.yelpcdn.com/bphoto/DW1LaN66hAym4Oh-Ax_isw/o.jpg	The interior of the place is as festive as other similarly themed restaurants. There are ornaments, ribbons, and all sorts of colorful articles from wall to wall and across the ceiling. Seating is just enough for a few groups, but even then there isnt much room for dining here. As Spanish songs play in the background, its easy to feel like one is no longer in Queens.	https://www.google.com/maps/place/87-21+Roosevelt+Ave,+Jackson+Heights,+NY+11372	food	restaurants
+\.
+
+
+--
+-- Data for Name: sub_to_categories; Type: TABLE DATA; Schema: public; Owner: alejandro
+--
+
+COPY public.sub_to_categories (subcategories_id, categories_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: subcategories; Type: TABLE DATA; Schema: public; Owner: alejandro
+--
+
+COPY public.subcategories (id, name, image, category_name) FROM stdin;
+1	lounge	http://source.unsplash.com/ak-PMKPQEAc	nightlife
+2	bars	https://source.unsplash.com/VZY6o3Q0EEI	nightlife
+3	clubs	https://source.unsplash.com/MU5ld71rDcs	nightlife
+4	nail salon	https://source.unsplash.com/Xa8fX8bQCgs	services
+5	barbershop	https://source.unsplash.com/m8UvH75I2lI	services
+6	women hair salon	https://source.unsplash.com/PtOfbGkU3uI	services
+7	laundromat	https://source.unsplash.com/o7SvheEZoks	services
+8	fresh groceries	https://source.unsplash.com/SAPvKo12dQE	food
+9	supermarket	https://source.unsplash.com/2mhqft65NIo	food
+10	beauty supplies	https://source.unsplash.com/BkaD07QEiJc	stores
+11	pharmacy	https://source.unsplash.com/JuKgTqhSS5M	services
+12	dentist	https://source.unsplash.com/kdoaOFGE9QM	services
+13	winery	https://source.unsplash.com/W4Gwb-xz_fA	food
+14	convenience store	https://source.unsplash.com/-IWFiQtjwkc	stores
+15	coffeeshop	https://source.unsplash.com/KgziKKUyJVA	food
+16	internet-cafe	https://source.unsplash.com/6o4uc16IkDs	food
+17	religious stores	https://source.unsplash.com/wkn_KHBExcE	stores
+18	electronic stores	https://source.unsplash.com/yFnX8DaC3UM	services
+19	hardware stores	https://source.unsplash.com/t5YUoHW6zRo	services
+20	breakfast	https://source.unsplash.com/IylDgTHzOUs	food
+21	organic food	https://source.unsplash.com/inJF419mrPE	food
+22	mexican food	https://source.unsplash.com/7sStoaxfJh0	food
+23	gown dresses (sweet16/wedding)	https://source.unsplash.com/p7v6X41PP4w	stores
+24	mexican clothes	https://source.unsplash.com/1w7OXUu83cM	stores
+25	carniseria	https://source.unsplash.com/UspMYswGQ5M	food
+26	bakery	https://source.unsplash.com/8Jg4U4xHu-o	food
+27	eyewear	https://source.unsplash.com/UsALNdok2m4	services
+28	dry cleaners	https://source.unsplash.com/YbGMa1Jz1yY	services
+29	eyebrow thread	https://source.unsplash.com/cowLgyb63c4	services
+30	sneaker store	https://source.unsplash.com/o1QdvWV9okI	stores
+31	juice stands	https://source.unsplash.com/DSxurmhrfuc	food
+32	bank	https://source.unsplash.com/fJTqyZMOh18	services
+33	phone companies	https://source.unsplash.com/1giBTF3G4EE	services
+34	pizzeria	https://source.unsplash.com/KxbdAZx8Uqs	food
+35	tattoo/piercing	https://source.unsplash.com/zOyOWsANHXo	services
+36	jewelry stores	https://source.unsplash.com/f5Y_m2bD_Tw	stores
+37	party stores	https://source.unsplash.com/0yTVA0TIq5o	stores
+38	baby stores	https://source.unsplash.com/p0hDztR46cw	stores
+39	gym	https://source.unsplash.com/WvDYdXDzkhs	services
+40	sport bar	https://source.unsplash.com/NGb5i1-M1hw	nightlife
+41	repair shops (bike etc.)	https://source.unsplash.com/VkFhaQHVcE4	services
+\.
+
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: alejandro
+--
+
+SELECT pg_catalog.setval('public.categories_id_seq', 1, false);
+
+
+--
+-- Name: stores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: alejandro
+--
+
+SELECT pg_catalog.setval('public.stores_id_seq', 1, false);
+
+
+--
+-- Name: subcategories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: alejandro
+--
+
+SELECT pg_catalog.setval('public.subcategories_id_seq', 1, false);
+
+
+--
+-- Name: categories categories_pkey; Type: CONSTRAINT; Schema: public; Owner: alejandro
+--
+
+ALTER TABLE ONLY public.categories
+    ADD CONSTRAINT categories_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: stores stores_pkey; Type: CONSTRAINT; Schema: public; Owner: alejandro
+--
+
+ALTER TABLE ONLY public.stores
+    ADD CONSTRAINT stores_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: subcategories subcategories_pkey; Type: CONSTRAINT; Schema: public; Owner: alejandro
+--
+
+ALTER TABLE ONLY public.subcategories
+    ADD CONSTRAINT subcategories_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sub_to_categories sub_to_categories_categories_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: alejandro
+--
+
+ALTER TABLE ONLY public.sub_to_categories
+    ADD CONSTRAINT sub_to_categories_categories_id_fkey FOREIGN KEY (categories_id) REFERENCES public.categories(id);
+
+
+--
+-- Name: sub_to_categories sub_to_categories_subcategories_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: alejandro
+--
+
+ALTER TABLE ONLY public.sub_to_categories
+    ADD CONSTRAINT sub_to_categories_subcategories_id_fkey FOREIGN KEY (subcategories_id) REFERENCES public.subcategories(id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
