@@ -19,7 +19,7 @@ class SearchResults extends React.Component {
             <Link to={`/${elem.category_name}/${elem.subcategory_name}/${elem.name}`}>
               <div className="tile" key={i}>
                 <img
-                  src={elem.photo}
+                  src={elem.photos[0]}
                   alt={`${elem.name}`}
                   className="tileImage"
                   id={elem.id}

@@ -14,9 +14,11 @@ class Home extends React.Component {
   }
   getStores = (input) => {
     axios
-      .get(`/search/${input}`)
+      .get('/api/search', {
+        params: { name: input }
+      })
       .then(resp => {
-        console.log("this is the response", resp);
+        console.log("this is the response", {});
         this.setState({ stores: resp.data.data });
       })
       .catch(error => {
@@ -27,10 +29,12 @@ class Home extends React.Component {
   callGetStores = (e) => {
     const input = e.target.value;
     clearInterval(this.state.timerID);
-    this.setState({timerID:setTimeout(
-      ()=> {this.getStores(input)},
-      1000
-    )})
+    this.setState({
+      timerID: setTimeout(
+        () => { this.getStores(input) },
+        1000
+      )
+    })
   }
 
 
@@ -49,7 +53,7 @@ class Home extends React.Component {
             onChange={this.callGetStores}
           />
         </div>
-        { stores.length ? <SearchResults stores={stores} /> : <Blurb />}        
+        {stores.length ? <SearchResults stores={stores} /> : <Blurb />}
       </div>
     );
   }
