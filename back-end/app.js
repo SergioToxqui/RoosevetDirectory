@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
+var searchRouter = require('./routes/search');
 
 
 var app = express();
@@ -24,6 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../front-end/build')));
 
 
+app.use('/api/search', searchRouter);
 app.use('/', index);
 //app.use('/users', users);
 app.get('*', (req, res) => {
