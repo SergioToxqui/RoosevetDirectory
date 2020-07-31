@@ -17,10 +17,10 @@ Roosevelt Directory was built using HTML, CSS, javascript, Express, React and Ax
 * The home page show cases a new store every week with a blurb of the store(store story)
 
 ## Backend Endpoints & Functionality
-| Method | Endpoint           | Params                         | Description                                     |
-| ------ | ------------------ | ------------------------------ | ----------------------------------------------- |
-| `GET`  | `/search`          | `category`, `subcategory`, `q` | Search stores by category, subcategory and name |
-| `GET`  | `/biz/:store_name` | `category`, `subcategory`, `q` | Retrieve store details by store name            |
+| Method | Endpoint           | Params                            | Description                                     |
+| ------ | ------------------ | --------------------------------- | ----------------------------------------------- |
+| `GET`  | `/search`          | `category`, `subcategory`, `name` | Search stores by category, subcategory and name |
+| `GET`  | `/biz/:store_name` | N/A                               | Retrieve store details by store name            |
 
 
 
