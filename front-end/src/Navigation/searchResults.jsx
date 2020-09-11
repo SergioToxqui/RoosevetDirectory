@@ -4,17 +4,12 @@ import { Link } from "react-router-dom";
 
 
 class SearchResults extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      stores: props.stores
-    };
-  }
-
   render() {
+    const { stores } = this.props
+
     return (
       <div className="tileBox">
-        {this.state.stores.map((elem, i) => {
+        {stores.map((elem, i) => {
           return (
             <Link to={`/${elem.category_name}/${elem.subcategory_name}/${elem.name}`}>
               <div className="tile" key={i}>
@@ -23,7 +18,6 @@ class SearchResults extends React.Component {
                   alt={`${elem.name}`}
                   className="tileImage"
                   id={elem.id}
-                  onClick={this.handleOnClick}
                 />
                 <div className="tileName"> {elem.name}</div>
                 <div className="tileAddress"> {elem.type}</div>

@@ -1,4 +1,4 @@
-.blurb {
+.blurb__text {
 
   color: black;
   font-size: 1.5em;
@@ -12,7 +12,7 @@
   margin-top: 25px;
 }
 
-.blurbGrid {
+.blurb__images {
   background-color: #ffffff;
   height: 200px;
   width: 100%;
@@ -88,7 +88,7 @@
 }
 
 @media screen and (max-width: 450px) {
-  .blurb {
+  .blurb__text {
     color: black;
     font-size: 1em;
     line-height: none;
@@ -97,7 +97,7 @@
     margin-bottom: 10px;
   }
 
-  .blurbGrid {
+  .blurb__images {
     background-color: #ffffff;
     height: 100vh;
     width: 100vw;
