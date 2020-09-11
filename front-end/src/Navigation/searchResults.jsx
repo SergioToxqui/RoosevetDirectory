@@ -11,7 +11,7 @@ class SearchResults extends React.Component {
       <div className="tileBox">
         {stores.map((elem, i) => {
           return (
-            <Link to={`/${elem.category_name}/${elem.subcategory_name}/${elem.name}`}>
+            <Link to={`/store/${elem.name}`}>
               <div className="tile" key={i}>
                 <img
                   src={elem.photos[0]}
