@@ -1,0 +1,13 @@
+{
+  "dev": {
+    "driver": "pg",
+    "user": {
+      "ENV": "USER"
+    },
+    "password": "",
+    "host": "localhost",
+    "database": "roosevelt_directory_db",
+    "schema": "public"
+  },
+  "sql-file": true
+}

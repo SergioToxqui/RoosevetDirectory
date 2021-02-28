@@ -4,10 +4,16 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "start:dev": "nodemon ./bin/www"
+    "start:dev": "nodemon ./bin/www",
+    "dbm:create": "db-migrate create --migrations-dir ./db/migrations",
+    "dbm:up": "db-migrate up --migrations-dir ./db/migrations",
+    "dbm:down": "db-migrate down --migrations-dir ./db/migrations",
+    "dbm:reset": "db-migrate reset --migrations-dir ./db/migrations"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
+    "db-migrate": "^0.11.12",
+    "db-migrate-pg": "^1.2.2",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "express": "~4.17.1",
