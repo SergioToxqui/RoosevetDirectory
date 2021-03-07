@@ -21,6 +21,7 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.19.4",
     "pg-promise": "^10.5.8",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "slugify": "^1.4.7"
   }
 }
