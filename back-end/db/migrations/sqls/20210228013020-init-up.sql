@@ -51,6 +51,7 @@ CREATE TABLE "businesses" (
 );
 
 CREATE INDEX "businesses_keywords_searchable_idx" ON "businesses" USING GIN ("keywords_searchable");
+CREATE INDEX "businesses_name_slut_idx" ON "businesses" USING HASH ("name_slug");
 
 ALTER TABLE "categories" ADD FOREIGN KEY ("parent_category_id") REFERENCES "categories" ("id");
 
