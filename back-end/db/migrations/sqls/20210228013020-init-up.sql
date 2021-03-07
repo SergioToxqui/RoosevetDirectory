@@ -15,9 +15,9 @@ CREATE TABLE "categories" (
   "parent_category_id" INT
 );
 
-CREATE TABLE "stores_categories" (
+CREATE TABLE "business_categories" (
   "id" SERIAL PRIMARY KEY,
-  "store_id" INT,
+  "business_id" INT,
   "category_id" INT
 );
 
@@ -25,34 +25,42 @@ CREATE TABLE "objects" (
   "id" SERIAL PRIMARY KEY,
   "url" VARCHAR,
   "type" VARCHAR,
-  "store_id" INT
+  "business_id" INT
 );
 
-CREATE TABLE "stores_schedules" (
+CREATE TABLE "business_schedules" (
   "id" SERIAL PRIMARY KEY,
   "day" dow,
   "open_time" VARCHAR(8),
   "close_time" VARCHAR(8),
-  "store_id" INT
+  "business_id" INT
 );
 
-CREATE TABLE "stores" (
+CREATE TABLE "businesses" (
   "id" SERIAL PRIMARY KEY,
   "name" VARCHAR NOT NULL,
+  "name_slug" VARCHAR NOT NULL,
   "phone" VARCHAR,
-  "address" VARCHAR,
-  "description" VARCHAR
+  "address_1" VARCHAR,
+  "address_2" VARCHAR,
+  "description" VARCHAR,
+  "keywords" VARCHAR,
+  "keywords_searchable" tsvector GENERATED ALWAYS AS (to_tsvector('english', "businesses"."keywords")) STORED,
+  "active" BOOLEAN,
+  "status" VARCHAR
 );
+
+CREATE INDEX "businesses_keywords_searchable_idx" ON "businesses" USING GIN ("keywords_searchable");
 
 ALTER TABLE "categories" ADD FOREIGN KEY ("parent_category_id") REFERENCES "categories" ("id");
 
-ALTER TABLE "stores_categories" ADD FOREIGN KEY ("store_id") REFERENCES "stores" ("id");
+ALTER TABLE "business_categories" ADD FOREIGN KEY ("business_id") REFERENCES "businesses" ("id");
 
-ALTER TABLE "stores_categories" ADD FOREIGN KEY ("category_id") REFERENCES "categories" ("id");
+ALTER TABLE "business_categories" ADD FOREIGN KEY ("category_id") REFERENCES "categories" ("id");
 
-ALTER TABLE "objects" ADD FOREIGN KEY ("store_id") REFERENCES "stores" ("id");
+ALTER TABLE "objects" ADD FOREIGN KEY ("business_id") REFERENCES "businesses" ("id");
 
-ALTER TABLE "stores_schedules" ADD FOREIGN KEY ("store_id") REFERENCES "stores" ("id");
+ALTER TABLE "business_schedules" ADD FOREIGN KEY ("business_id") REFERENCES "businesses" ("id");
     
 INSERT INTO categories (name, parent_category_id, image_url)
   VALUES 
@@ -95,7 +103,7 @@ INSERT INTO categories (name, parent_category_id, image_url)
     ('laundromat', 3, 'https://source.unsplash.com/o7SvheEZoks'),
     ('pharmacy', 3, 'https://source.unsplash.com/747NDboAWNY'),
     ('dentist', 3, 'https://source.unsplash.com/kdoaOFGE9QM'),
-    ('electronic stores', 3, 'https://source.unsplash.com/yFnX8DaC3UM'),
+    ('electronics stores', 3, 'https://source.unsplash.com/yFnX8DaC3UM'),
     ('hardware stores', 3, 'https://source.unsplash.com/t5YUoHW6zRo'),
     ('eyewear', 3, 'https://source.unsplash.com/UsALNdok2m4'),
     ('dry cleaners', 3, 'https://source.unsplash.com/YbGMa1Jz1yY'),

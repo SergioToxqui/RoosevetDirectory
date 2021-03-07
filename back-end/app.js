@@ -6,9 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var searchRouter = require('./routes/search');
-
+const businessesRouter = require('./routes/businesses');
 
 var app = express();
 
@@ -25,9 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../front-end/build')));
 
 
-app.use('/api/search', searchRouter);
-app.use('/', index);
-//app.use('/users', users);
+app.use('/api/biz', businessesRouter);
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '../front-end/build/index.html'));
 });

@@ -1,0 +1,11 @@
+{
+  "name": "Alejo's Place",
+  "name_slug": "alejos-place",
+  "phone": "(917) 573-6025",
+  "address_1": "1234 Main St",
+  "address_2": "STREET",
+  "description": "Best buñuelos, empanadas and sancochos in town. Alejo's place is the best place to try the traditional colombian flavor by yourself or with company",
+  "keywords": "colombian buñuelos empanadas sancocho",
+  "active": false,
+  "status": "OPERATING"
+}

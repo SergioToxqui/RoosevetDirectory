@@ -1,78 +1,83 @@
 # RooseveltDirectory
 A centralized location for information on local businesses, resources and activities on Roosevelt Avenue(in Jackson Heights).
-The app aims to connect new community members to established local mom and pop stores.  
+The app aims to connect new community members to established local mom and pop businesses.  
 
 Roosevelt Directory was built using HTML, CSS, javascript, Express, React and Axios. It also uses Google Maps Embed.
 
 ![Roosevelt Directory Home Page](./docs/assets/rd-landing.png)
 
 ## Features
-* Search stores by name
+* Search businesses by name
 
 ## Features under construction
-* Access stores by category and subcategories
-* Form for new stores to sign-up to be part of the Roosevelt Directory
-* Admin dashboard with controls to approve new stores sign up
+* Access businesses by category and subcategories
+* Form for new businesses to sign-up to be part of the Roosevelt Directory
+* Admin dashboard with controls to approve new businesses sign up
 * Stores photos upload
-* The home page show cases a new store every week with a blurb of the store(store story)
+* The home page show cases a new business every week with a blurb of the business(business story)
 
 ## Backend Endpoints & Functionality
 
-| Method | Endpoint           | Params                            | Description                                     |
-| ------ | ------------------ | --------------------------------- | ----------------------------------------------- |
-| `GET`  | `/search`          | `category`, `subcategory`, `name` | Search stores by category, subcategory and name |
-| `GET`  | `/biz/:store_name` | N/A                               | Retrieve store details by store name            |
+| Method | Endpoint           | Params                            | Description                                         |
+| ------ | ------------------ | --------------------------------- | --------------------------------------------------- |
+| `GET`  | `/search`          | `category`, `subcategory`, `name` | Search businesses by category, subcategory and name |
+| `GET`  | `/biz/:store_name` | N/A                               | Retrieve business details by business name          |
 
 ## DB Resources Operations & access patterns
 
 ### Stores
-1. Get single store by slug or id
+1. Get single business by slug or id
 ```
-GET /api/stores/:id
-GET /api/stores/:slugified-name # Will need to be an index.
+GET /api/biz/:id
+GET /api/biz/:slugified-name # Will need to be an index.
 ```
-2. Search stores by keywords or name
+2. Search business by keywords or name
 ```
-GET /api/stores?q=<keywords>
-GET /api/stores/search?q=<keywords>
+GET /api/biz?q=<keywords>
+GET /api/biz/search?q=<keywords>
 ```
 
-* Get stores by category or subcategory
+* Get Businesses by category or subcategory
 ```
-GET /api/stores?categories[]=<cat1>&categories[]=<cat2>
-GET /api/stores/category/:category
+GET /api/biz?categories[]=<cat1>&categories[]=<cat2>
+GET /api/biz/category/:category
 ```
-* Add a store
+* Add a Business
 ```
-POST /api/stores
+POST /api/biz
 ```
-* Update a store category. Category as a subresource of a store?
+* Update a business category. Category as a subresource of a business?
 ```
-PUT /api/stores/:id/categories/:category
-DELETE /api/stores/:id/categories/:category
+PUT /api/biz/:id/categories/:category
+DELETE /api/biz/:id/categories/:category
 ```
-* Add a store schedule. Schedule as a subresource of a store
+* Add a business schedule. Schedule as a subresource of a business
 ```
-PUT /api/stores/:id/schedule/:dow
+PUT /api/biz/:id/schedule/:dow
 ```
-* Adding an object for a store, like uploading or removing images. Objects as subresource of stores?
+* Adding an object for a business, like uploading or removing images. Objects as subresource of businesses?
 ```
-PUT /api/stores/:id/objects/:type
+PUT /api/biz/:id/objects/:type
 ```
 
 ## Categories
 * Get all main categories
-```
+
+```txt
 GET /api/categories
 ```
+
 * Get all subcategories from main category
-```
+
+```txt
 GET /api/categories/:category/subcategories
 ```
-* Get stores by categories? With stores as subresource of categories.
-This makes sense because a category could be seen as a collection of stores
-```
-GET /api/categories/:category/stores
+
+* Get businesses by categories? With businesses as subresource of categories.
+This makes sense because a category could be seen as a collection of businesses
+
+```txt
+GET /api/categories/:category/businesses
 ```
 
 
