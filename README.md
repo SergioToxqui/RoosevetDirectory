@@ -1,4 +1,5 @@
 # RooseveltDirectory
+
 A centralized location for information on local businesses, resources and activities on Roosevelt Avenue(in Jackson Heights).
 The app aims to connect new community members to established local mom and pop businesses.  
 
@@ -7,9 +8,11 @@ Roosevelt Directory was built using HTML, CSS, javascript, Express, React and Ax
 ![Roosevelt Directory Home Page](./docs/assets/rd-landing.png)
 
 ## Features
+
 * Search businesses by name
 
 ## Features under construction
+
 * Access businesses by category and subcategories
 * Form for new businesses to sign-up to be part of the Roosevelt Directory
 * Admin dashboard with controls to approve new businesses sign up
@@ -18,12 +21,11 @@ Roosevelt Directory was built using HTML, CSS, javascript, Express, React and Ax
 
 ## Backend Endpoints & Functionality
 
-| Method | Endpoint           | Params                            | Description                                         |
-| ------ | ------------------ | --------------------------------- | --------------------------------------------------- |
-| `GET`  | `/search`          | `category`, `subcategory`, `name` | Search businesses by category, subcategory and name |
-| `GET`  | `/biz/:store_name` | N/A                               | Retrieve business details by business name          |
+| Method | Endpoint   | Params/Body     | Description                     |
+| ------ | ---------- | --------------- | ------------------------------- |
+| POST   | `/api/biz` | Business object | Adds a business to the database |
 
-## DB Resources Operations & access patterns
+## DB Resources Operations & access patterns Draft
 
 ### Stores
 1. Get single business by slug or id
@@ -42,10 +44,7 @@ GET /api/biz/search?q=<keywords>
 GET /api/biz?categories[]=<cat1>&categories[]=<cat2>
 GET /api/biz/category/:category
 ```
-* Add a Business
-```
-POST /api/biz
-```
+
 * Update a business category. Category as a subresource of a business?
 ```
 PUT /api/biz/:id/categories/:category
@@ -79,6 +78,3 @@ This makes sense because a category could be seen as a collection of businesses
 ```txt
 GET /api/categories/:category/businesses
 ```
-
-
-
