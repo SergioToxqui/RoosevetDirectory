@@ -5,24 +5,23 @@ import { Link } from "react-router-dom";
 
 class SearchResults extends React.Component {
   render() {
-    const { stores } = this.props
+    const { businesses } = this.props
 
     return (
       <div className="tileBox">
-        {stores.map((elem, i) => {
+        {businesses.map((biz, i) => {
           return (
-            <Link to={`/store/${elem.name}`}>
+            <Link to={`/store/${biz.name}`} key={biz.id}>
               <div className="tile" key={i}>
                 <img
-                  src={elem.photos[0]}
-                  alt={`${elem.name}`}
+                  src={biz.img_url}
+                  alt={`${biz.name}`}
                   className="tileImage"
-                  id={elem.id}
                 />
-                <div className="tileName"> {elem.name}</div>
-                <div className="tileAddress"> {elem.type}</div>
-                <div className="tileAddress"> {elem.address}</div>
-                <div className="tilePhone"> {elem.phone}</div>
+                <div className="tileName"> {biz.name}</div>
+                <div className="tileAddress"> {biz.address_1}</div>
+                <div className="tileAddress"> {biz.address_2}</div>
+                <div className="tilePhone"> {biz.phone}</div>
               </div>
             </Link>
           );

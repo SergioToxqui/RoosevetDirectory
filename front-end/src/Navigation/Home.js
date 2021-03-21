@@ -1,4 +1,3 @@
-
 import React from "react";
 import Blurb from "./Blurb";
 import axios from "axios";
@@ -10,42 +9,40 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stores: [],
-      loading: false
+      businesses: [],
+      loading: false,
+      searchTerms: ''
     };
     this.timerID = 0
   }
 
-  getStores = (input) => {
-    axios
-      .get('/api/search', {
-        params: { name: input }
+  searchBusinesses = async (searchTerms) => {
+    try {
+      let res = await axios.get('/api/biz', {
+        params: { q: searchTerms }
       })
-      .then(resp => {
-        console.log("this is the response", {});
-        this.setState({
-          stores: resp.data.data,
-          loading: false
-        });
+      this.setState({
+        businesses: res.data.payload,
+        loading: false
       })
-      .catch(error => {
-        console.log(error);
-        this.setState({
-          loading: false
-        })
-      });
+    } catch (error) {
+      console.log(error);
+      this.setState({
+        loading: false
+      })
+    };
   };
 
-  callGetStores = (e) => {
-    const input = e.target.value;
-    clearInterval(this.timerID);
-    this.timerID = setTimeout(() => {
-      this.setState({
-        loading: true
-      }, () => this.getStores(input))
-    }, 1000)
+  handleSearchTerms = (e) => {
+    this.setState({
+      searchTerms: e.target.value
+    })
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.searchBusinesses(this.state.searchTerms)
+  }
 
   render() {
     const override = css`
@@ -53,20 +50,23 @@ class Home extends React.Component {
       margin: 10vh auto 0 auto;
     `;
 
-    const { stores, loading } = this.state
+    const { businesses, loading } = this.state
 
     return (
-      <div>
-        <div className="home">
-          <div className="home-top-text">
-            To explore local businesses click on a category above.
-          </div>
-          <input
-            type="text"
-            className="home-search"
-            placeholder="Search for a specific business."
-            onChange={this.callGetStores}
-          />
+      <div className="home">
+        <div className="jumbotron">
+          <p className="jumbotron__cta">
+            To explore local businesses click on a category above or search here.
+          </p>
+          <form className="search-form" onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              className="search-form__field"
+              placeholder="Search for a specific business."
+              onChange={this.handleSearchTerms}
+            />
+            <input type="submit" value="Search" className="search-form__button" />
+          </form>
         </div>
 
         {loading ?
@@ -80,7 +80,7 @@ class Home extends React.Component {
               />
             </div>
           ) :
-          stores.length ? <SearchResults loading={loading} stores={stores} /> : <Blurb />}
+          businesses.length ? <SearchResults loading={loading} businesses={businesses} /> : <Blurb />}
       </div>
     );
   }

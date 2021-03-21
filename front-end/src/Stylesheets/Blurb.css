@@ -66,27 +66,6 @@
   align-self: center;
 }
 
-.home-top-text {
-  grid-column: 2;
-  grid-row: 2;
-  color: white;
-  font-size: 1.2em;
-  text-align: center;
-  align-self: center;
-  text-shadow: 1px 1px 20px black;
-}
-
-.home-search {
-  grid-column: 2;
-  grid-row: 4;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.2em;
-  color: black;
-  padding: 0;
-  border-radius: 5px;
-  text-align: center;
-}
-
 @media screen and (max-width: 450px) {
   .blurb__text {
     color: black;
