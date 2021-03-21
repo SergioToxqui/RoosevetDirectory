@@ -18,11 +18,14 @@ const search = async (keywordsString) => {
   try {
     const SQL = `
       SELECT
-        id, name, name_slug, phone, address_1, 
-        address_2, description, active, status       
+        businesses.id, name, name_slug, phone, address_1, 
+        address_2, description, active, status,
+        objects.url AS img_url       
       FROM businesses 
+      JOIN objects on objects.business_id = businesses.id
       WHERE keywords_searchable @@ websearch_to_tsquery($1)
       AND active = TRUE
+      AND type = 'main_photo'
     `
     const data = await db.any(SQL, keywordsString)
     return data

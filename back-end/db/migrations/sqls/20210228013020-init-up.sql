@@ -8,6 +8,13 @@ CREATE TYPE "dow" AS ENUM (
   'sun'
 );
 
+CREATE TYPE "object_type" AS ENUM (
+  'main_photo',
+  'photo',
+  'document',
+  'other'
+);
+
 CREATE TABLE "categories" (
   "id" SERIAL PRIMARY KEY,
   "name" VARCHAR NOT NULL,
@@ -24,7 +31,7 @@ CREATE TABLE "business_categories" (
 CREATE TABLE "objects" (
   "id" SERIAL PRIMARY KEY,
   "url" VARCHAR,
-  "type" VARCHAR,
+  "type" object_type,
   "business_id" INT
 );
 
