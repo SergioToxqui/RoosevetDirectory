@@ -11,9 +11,9 @@ INSERT INTO objects (business_id, type, url)
     (1, 'main_photo', 'https://s3-media3.fl.yelpcdn.com/bphoto/VWIaD4Y2_-2xnKFZbisH7A/o.jpg'), 
     (1, 'photo', 'https://s3-media4.fl.yelpcdn.com/bphoto/RryLfgiE7EV6k2AsfViT5A/o.jpg'),
     (1, 'photo', 'https://s3-media1.fl.yelpcdn.com/bphoto/DW1LaN66hAym4Oh-Ax_isw/o.jpg'),
-    (2, 'photo', 'https://geo0.ggpht.com/cbk?photoid=3cfe_dFaDw0AAAQfCU_UkA&output=photo'),
+    (2, 'main_photo', 'https://geo0.ggpht.com/cbk?photoid=3cfe_dFaDw0AAAQfCU_UkA&output=photo'),
     (2, 'photo', 'https://s3-media0.fl.yelpcdn.com/bphoto/UAGGIGEDepJhCFRsGAUNSw/o.jpg'),
-    (3, 'photo', 'https://s3-media0.fl.yelpcdn.com/bphoto/O-aMOt_uboQBWaVj3lwUdA/o.jpg'),
+    (3, 'main_photo', 'https://s3-media0.fl.yelpcdn.com/bphoto/O-aMOt_uboQBWaVj3lwUdA/o.jpg'),
     (3, 'photo', 'https://s3-media0.fl.yelpcdn.com/bphoto/HkvaGYQP0roL9TUWz_qx4Q/o.jpg'),
     (3, 'photo', 'https://s3-media0.fl.yelpcdn.com/bphoto/leLUF5nJY2h0L2-9pA0VRA/o.jpg')
 ;
