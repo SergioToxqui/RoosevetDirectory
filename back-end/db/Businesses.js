@@ -14,6 +14,25 @@ const add = async (business) => {
   }
 }
 
+const search = async (keywordsString) => {
+  try {
+    const SQL = `
+      SELECT
+        id, name, name_slug, phone, address_1, 
+        address_2, description, active, status       
+      FROM businesses 
+      WHERE keywords_searchable @@ websearch_to_tsquery($1)
+      AND active = TRUE
+    `
+    const data = await db.any(SQL, keywordsString)
+    return data
+  } catch (err) {
+    throw err
+  }
+}
+
+
 module.exports = {
-  add
+  add,
+  search
 }
