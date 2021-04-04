@@ -6,4 +6,4 @@
 
 CREATE EXTENSION pg_trgm;
 
-CREATE INDEX "businesses_name_slug_trgm_idx" on "businesses" USING GIN ("name_slug" gin_trgm_ops);
+CREATE INDEX "businesses_name_slug_trgm_idx" on "businesses" USING GIST ("name_slug" gist_trgm_ops);
