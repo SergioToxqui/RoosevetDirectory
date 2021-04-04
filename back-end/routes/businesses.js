@@ -5,7 +5,7 @@ const Businesses = require('../db/Businesses')
 businessesRouter.post("/", async (req, res, next) => {
   const businessInfo = {
     ...req.body,
-    "name_slug": slugify(req.body.name.toLowerCase(), { remove: /[*+~.()'"!:@]/g }),
+    "name_slug": slugify(req.body.name.toLowerCase(), { remove: /[*+~.,()'"!:@]/g }),
     "active": false,
     "status": "PENDING APPROVAL",
   }
