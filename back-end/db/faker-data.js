@@ -5,7 +5,7 @@ const { db, pgpAs } = require('./pgp')
 
 let SQL = `
   INSERT INTO businesses 
-    (name, name_slug, phone, address_1, address_2, description, keywords, active, status)
+    (name, name_slug, phone, address_1, address_2, description, thumb_img, keywords, active, status)
     VALUES 
 `
 let rows = []
@@ -18,13 +18,14 @@ for (let i = 1; i <= ROWS_COUNT; i++) {
     address_1: `${faker.address.streetAddress()}, ${faker.address.stateAbbr()}, ${faker.address.zipCode()}`,
     address_2: faker.address.secondaryAddress(),
     description: faker.company.catchPhrase(),
+    thumb_img: faker.image.imageUrl(),
     active: true, //faker.datatype.boolean(),
     status: 'PENDING APPROVAL'
   }
   business.name_slug = slugify(business.name.toLowerCase(), { remove: /[*+~.,()'"!:@]/g })
   business.keywords = business.description.toLowerCase()
 
-  let row = pgpAs.format(`($/name/, $/name_slug/, $/phone/, $/address_1/, $/address_2/, $/description/, $/keywords/, $/active/, $/status/)`, business)
+  let row = pgpAs.format(`($/name/, $/name_slug/, $/phone/, $/address_1/, $/address_2/, $/description/, $/thumb_img/, $/keywords/, $/active/, $/status/)`, business)
   rows.push(row)
 }
 

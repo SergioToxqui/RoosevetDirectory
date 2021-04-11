@@ -52,6 +52,7 @@ CREATE TABLE "businesses" (
   "address_1" VARCHAR,
   "address_2" VARCHAR,
   "description" VARCHAR,
+  "thumb_img" VARCHAR,
   "keywords" VARCHAR,
   "keywords_searchable" tsvector GENERATED ALWAYS AS (to_tsvector('english', "businesses"."keywords")) STORED,
   "active" BOOLEAN,
