@@ -9,7 +9,9 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      businesses: [],
+      resultsByName: [],
+      resultsByKeywords: [],
+      searchSuccess: false,
       loading: false,
       searchTerms: ''
     };
@@ -21,9 +23,12 @@ class Home extends React.Component {
       let res = await axios.get('/api/biz', {
         params: { q: searchTerms }
       })
+      const { resultsByName, resultsByKeywords } = res.data.payload
       this.setState({
-        businesses: res.data.payload,
-        loading: false
+        resultsByName,
+        resultsByKeywords,
+        loading: false,
+        searchSuccess: true
       })
     } catch (error) {
       console.log(error);
@@ -50,7 +55,7 @@ class Home extends React.Component {
       margin: 10vh auto 0 auto;
     `;
 
-    const { businesses, loading } = this.state
+    const { resultsByKeywords, resultsByName, searchSuccess, loading } = this.state
 
     return (
       <div className="home">
@@ -80,7 +85,12 @@ class Home extends React.Component {
               />
             </div>
           ) :
-          businesses.length ? <SearchResults loading={loading} businesses={businesses} /> : <Blurb />}
+          searchSuccess ? (
+            <SearchResults
+              loading={loading}
+              resultsByKeywords={resultsByKeywords}
+              resultsByName={resultsByName}
+            />) : <Blurb />}
       </div>
     );
   }
