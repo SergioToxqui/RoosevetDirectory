@@ -36,7 +36,6 @@ GET /api/biz/:slugified-name # Will need to be an index.
 2. Search business by keywords or name
 ```
 GET /api/biz?q=<keywords>
-GET /api/biz/search?q=<keywords>
 ```
 
 * Get Businesses by category or subcategory
