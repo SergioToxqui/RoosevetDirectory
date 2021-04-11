@@ -47,6 +47,7 @@ CREATE TABLE "businesses" (
   "id" SERIAL PRIMARY KEY,
   "name" VARCHAR NOT NULL,
   "name_slug" VARCHAR NOT NULL,
+  "name_searchable" tsvector GENERATED ALWAYS AS (to_tsvector('english', "businesses"."name")) STORED,
   "phone" VARCHAR,
   "address_1" VARCHAR,
   "address_2" VARCHAR,
@@ -58,6 +59,7 @@ CREATE TABLE "businesses" (
 );
 
 CREATE INDEX "businesses_keywords_searchable_idx" ON "businesses" USING GIN ("keywords_searchable");
+CREATE INDEX "businesses_name_searchable_idx" ON "businesses" USING GIN ("name_searchable");
 CREATE INDEX "businesses_name_slug_idx" ON "businesses" USING HASH ("name_slug");
 
 ALTER TABLE "categories" ADD FOREIGN KEY ("parent_category_id") REFERENCES "categories" ("id");

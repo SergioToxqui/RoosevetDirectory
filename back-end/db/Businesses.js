@@ -14,13 +14,13 @@ const add = async (business) => {
   }
 }
 
-const search = async (keywordsString) => {
+const searchByKeywords = async (keywordsString) => {
   try {
     const SQL = `
       SELECT
-        businesses.id, name, name_slug, phone, address_1, 
+        businesses.id, name, name_slug, phone, address_1,
         address_2, description, active, status,
-        objects.url AS img_url       
+        objects.url AS img_url
       FROM businesses 
       JOIN objects on objects.business_id = businesses.id
       WHERE keywords_searchable @@ websearch_to_tsquery($1)
@@ -34,8 +34,27 @@ const search = async (keywordsString) => {
   }
 }
 
+const searchByName = async (name) => {
+  try {
+    const SQL = `
+      SELECT
+        businesses.id, name, name_slug, phone, address_1,
+        address_2, description, active, status
+      FROM businesses
+      WHERE name_searchable @@ plainto_tsquery($1)
+      AND active = TRUE
+    `
+    const data = await db.any(SQL, name)
+    return data
+  } catch (err) {
+    throw err
+  }
+}
+
+
 
 module.exports = {
   add,
-  search
+  searchByKeywords,
+  searchByName
 }
