@@ -48,10 +48,26 @@ const searchByName = async (name) => {
   }
 }
 
-
+const getBySlug = async (slug) => {
+  try {
+    const SQL = `
+      SELECT
+        businesses.id, name, name_slug, phone, address_1,
+        address_2, description, active, status, thumb_img
+      FROM businesses
+      WHERE name_slug = $1
+      AND active = TRUE
+    `
+    const data = await db.oneOrNone(SQL, slug)
+    return data
+  } catch (err) {
+    throw err
+  }
+}
 
 module.exports = {
   add,
   searchByKeywords,
-  searchByName
+  searchByName,
+  getBySlug
 }
