@@ -31,13 +31,26 @@ for (let i = 1; i <= ROWS_COUNT; i++) {
 
 SQL += rows.join(',\n')
 
-db.any(SQL)
-  .then(() => {
-    console.log('Success')
+const addBusinessesToCategories = async () => {
+  const SQL = `
+    INSERT INTO business_categories(business_id, category_id)
+    SELECT id, (id / 21) + 1 FROM businesses WHERE id > 3;
+  `
+  await db.any(SQL)
+  console.log('SUCCESS: Adding business to categories')
+}
+
+const main = async () => {
+  try {
+    await db.any(SQL)
+    console.log('Success adding businesses')
+    await addBusinessesToCategories()
+    console.log('SUCCESS ALL')
     process.exit(0)
-  })
-  .catch((err) => {
+
+  } catch (err) {
     console.error('There was an error', err)
-  })
+  }
+}
 
-
+main()
