@@ -9,7 +9,7 @@ let SQL = `
     VALUES 
 `
 let rows = []
-let ROWS_COUNT = 1000;
+let ROWS_COUNT = 500;
 
 for (let i = 1; i <= ROWS_COUNT; i++) {
   let business = {
