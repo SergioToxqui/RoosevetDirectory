@@ -3,7 +3,6 @@ import axios from "axios";
 import { Route, Switch, Link } from "react-router-dom";
 import StoreTiles from "./StoreTiles";
 import Subcategories from "./Subcategories";
-import StoreInfo from "./StoreInfo";
 
 class Stores extends React.Component {
   constructor(props) {
@@ -52,8 +51,8 @@ class Stores extends React.Component {
     return (
       <div className="content">
         <div className="stores">
-        <div className="stores-title">
-        <Link to={urlFix.join("/")}>{urlFix.join("/").toUpperCase()}</Link>
+          <div className="stores-title">
+            <Link to={urlFix.join("/")}>{urlFix.join("/").toUpperCase()}</Link>
           </div>
           <div className="stores-description">
             <span>
@@ -64,7 +63,6 @@ class Stores extends React.Component {
         </div>
         <Switch>
           <Route exact path="/stores" render={this.renderSubcategories} />
-          <Route path="/stores/:subcategory/:storeName" component={StoreInfo} />
           <Route path="/stores/:subcategory" component={StoreTiles} />
         </Switch>
       </div>

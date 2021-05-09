@@ -3,7 +3,6 @@ import axios from "axios";
 import { Route, Switch, Link } from "react-router-dom";
 import StoreTiles from "./StoreTiles";
 import Subcategories from "./Subcategories";
-import StoreInfo from "./StoreInfo";
 
 class Food extends React.Component {
   constructor(props) {
@@ -64,7 +63,6 @@ class Food extends React.Component {
         </div>
         <Switch>
           <Route exact path="/food" render={this.renderSubcategories} />
-          <Route path="/food/:subcategory/:storeName" component={StoreInfo} />
           <Route path="/food/:subcategory" component={StoreTiles} />
         </Switch>
       </div>

@@ -5,17 +5,17 @@ import { Carousel } from "react-responsive-carousel";
 import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 
-class StoreInfo extends React.Component {
+class BusinessPage extends React.Component {
   state = {
-    store: {}
+    biz: {}
   };
 
-  getStore = () => {
-    const { storeName } = this.props.match.params
+  getBusiness = () => {
+    const { slug } = this.props.match.params
     axios
-      .get(`/api/search`, { params: { name: storeName } })
+      .get(`/api/biz/${slug}`)
       .then(resp => {
-        this.setState({ store: resp.data.data[0] });
+        this.setState({ biz: resp.data.payload.business });
       })
       .catch(error => {
         console.log(error);
@@ -23,44 +23,44 @@ class StoreInfo extends React.Component {
   };
 
   componentDidMount() {
-    this.getStore();
+    this.getBusiness();
   }
 
   render() {
-    const { store } = this.state
-    if (!store || !store.id) return <p>Loading...</p>
+    const { biz } = this.state
+    if (!biz || !biz.id) return <p>Loading...</p>
     return (
       <div className="storeInfoBox">
         <Carousel style={styles} width='50vw' showThumbs={false} className="storeInfoPhotos"> {
-          store.photos.map(photo => (
+          biz.photos.map(photo => (
             <div>
               <img src={photo} alt="main" />
-              <p className={store.name}>{store.name}</p>
+              <p className={biz.name}>{biz.name}</p>
             </div>
           ))
         }</Carousel>
-        <div className="storeInfoName"> {store.name}</div>
-        <div className="storeInfoAddress"> {store.address}</div>
-        <div className="storeInfoPhone"> {store.phone}</div>
+        <div className="storeInfoName"> {biz.name}</div>
+        <div className="storeInfoAddress"> {biz.address}</div>
+        <div className="storeInfoPhone"> {biz.phone}</div>
         <div className="storeInfoMon"> Monday</div>
-        <div className="storeInfoMonH"> {store.mon}</div>
+        <div className="storeInfoMonH"> {biz.mon}</div>
         <div className="storeInfoTues"> Tuesday</div>
-        <div className="storeInfoTuesH"> {store.tues}</div>
+        <div className="storeInfoTuesH"> {biz.tues}</div>
         <div className="storeInfoWed"> Wednesday</div>
-        <div className="storeInfoWedH"> {store.wed}</div>
+        <div className="storeInfoWedH"> {biz.wed}</div>
         <div className="storeInfoThurs"> Thursday</div>
-        <div className="storeInfoThursH"> {store.thurs}</div>
+        <div className="storeInfoThursH"> {biz.thurs}</div>
         <div className="storeInfoFri"> Friday</div>
-        <div className="storeInfoFriH"> {store.fri}</div>
+        <div className="storeInfoFriH"> {biz.fri}</div>
         <div className="storeInfoSat"> Saturday</div>
-        <div className="storeInfoSatH"> {store.sat}</div>
+        <div className="storeInfoSatH"> {biz.sat}</div>
         <div className="storeInfoSun"> Sunday</div>
-        <div className="storeInfoSunH"> {store.sun}</div>
-        <div className="storeInfoBlurb"> {store.description}</div>
+        <div className="storeInfoSunH"> {biz.sun}</div>
+        <div className="storeInfoBlurb"> {biz.description}</div>
 
         <div className="storeInfoMaps">
           <Iframe
-            url={`https://maps.google.com/maps?q=${store.address}&output=embed`}
+            url={`https://maps.google.com/maps?q=${biz.address}&output=embed`}
             id="myId"
             className="myClassname"
             display="initial"
@@ -75,4 +75,4 @@ class StoreInfo extends React.Component {
   }
 }
 
-export default StoreInfo;
+export default BusinessPage;
