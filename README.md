@@ -28,11 +28,14 @@ Roosevelt Directory was built using HTML, CSS, javascript, Express, React and Ax
 ## DB Resources Operations & access patterns Draft
 
 ### Stores
+
 1. Get single business by slug or id
+
 ```
-GET /api/biz/:id
-GET /api/biz/:slugified-name # Will need to be an index.
+GET /api/biz/:slugified-name
+GET /api/biz/:id # todo
 ```
+
 2. Search business by keywords or name
 ```
 GET /api/biz?q=<keywords>

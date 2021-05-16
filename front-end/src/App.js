@@ -25,7 +25,7 @@ import BusinessPage from "./Navigation/BusinessPage";
 class App extends React.Component {
   render() {
     return (
-      <div className="App">
+      <div className="ui container">
         <div className="header">
           <div className="header-image"><Link to='/'><img src="https://image.ibb.co/n3Qkin/logo50.png" alt="logo" /></Link></div>
           <div className="header-text">|  <Link to='/'> Roosevelt Directory</Link></div>

@@ -11,12 +11,12 @@
   margin-top: 5px;
 }
 
-.storeInfoPhotos {
+/* .storeInfoPhotos {
   grid-column: 1;
   grid-row: 1 / 8;
   overflow: hidden;
   border-right: solid white;
-}
+} */
 
 .storeInfoName {
   grid-column: 2 / 9;
@@ -50,10 +50,10 @@
   margin: auto;
 }
 
-.storeInfoMaps {
+/* .storeInfoMaps {
   grid-column: 2 / 9;
   grid-row: 7;
-}
+} */
 
 .storeInfoMon {
   grid-column: 2;
@@ -211,12 +211,12 @@
     grid-template-rows: 5% 3.5% 3.5% 3% 55% 30%;
   }
 
-  .storeInfoPhotos {
+  /* .storeInfoPhotos {
     grid-column: 1 / 5;
     grid-row: 5;
     border-top: solid white;
     border-bottom: solid white;
-  }
+  } */
 
   .storeInfoName {
     grid-column: 1 / 9;
@@ -240,10 +240,10 @@
     margin: auto;
   }
 
-  .storeInfoMaps {
+  /* .storeInfoMaps {
     grid-column: 1 / 9;
     grid-row: 6;
-  }
+  } */
 
   .storeInfoMon {
     grid-column: 1;

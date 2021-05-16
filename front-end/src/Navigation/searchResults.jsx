@@ -7,7 +7,7 @@ class SearchResults extends React.Component {
   renderResultsTiles = (results) => {
     return results.map((biz, i) => {
       return (
-        <Link to={`/store/${biz.name_slug}`} key={biz.id}>
+        <Link to={`/biz/${biz.name_slug}`} key={biz.id}>
           <div className="tile" key={i}>
             <img
               src={biz.thumb_img}
