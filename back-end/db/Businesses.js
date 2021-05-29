@@ -68,9 +68,15 @@ const getBySlug = async (slug) => {
   }
 }
 
+const getSchedule = async (id) => {
+  const schedule = await db.any('SELECT day, open_time, close_time FROM business_schedules WHERE business_id = 1;')
+  return schedule
+}
+
 module.exports = {
   add,
   searchByKeywords,
   searchByName,
-  getBySlug
+  getBySlug,
+  getSchedule
 }

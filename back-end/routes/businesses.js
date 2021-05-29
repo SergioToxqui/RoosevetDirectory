@@ -1,6 +1,7 @@
 const slugify = require('slugify')
 const businessesRouter = require('express').Router()
 const Businesses = require('../db/Businesses')
+const BusinessesMiddleware = require('../middleware/businesses')
 
 businessesRouter.post("/", async (req, res, next) => {
   const businessInfo = {
@@ -45,26 +46,27 @@ businessesRouter.get("/", async (req, res, next) => {
   }
 })
 
-businessesRouter.get("/:slug", async (req, res, next) => {
+businessesRouter.get("/:slug", BusinessesMiddleware.getBySlug, (req, res, next) => {
+  const { business } = req.locals
+  res.json({
+    error: null,
+    payload: { business },
+    message: 'Retrieved business by slug'
+  })
+})
+
+businessesRouter.get("/:slug/schedule", BusinessesMiddleware.getBySlug, async (req, res, next) => {
   try {
-    const { slug } = req.params
-    const business = await Businesses.getBySlug(slug)
-    if (!business) {
-      return res.status(404).json({
-        error: true,
-        payload: null,
-        message: `Business ${slug} not found`
-      })
-    }
+    const { business } = req.locals
+    const schedule = await Businesses.getSchedule(business.id)
     res.json({
-      error: null,
-      payload: { business },
-      message: 'Retrieved business by slug'
+      error: false,
+      payload: schedule,
+      message: `Business schedule retrieved`
     })
   } catch (err) {
     return next(err)
   }
 })
-
 
 module.exports = businessesRouter;
