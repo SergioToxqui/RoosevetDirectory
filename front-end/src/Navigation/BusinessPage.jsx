@@ -106,6 +106,11 @@ class BusinessPage extends React.Component {
               <p> {biz.description}</p>
             </div>
 
+            <div className="ui segment vertical basic">
+              <h3 className="ui header">Phone:</h3>
+              <p> {biz.phone}</p>
+            </div>
+
             <div className="ui segment vertical basic compact">
               <h3>Schedule:</h3>
               <table class="ui striped compact table">
