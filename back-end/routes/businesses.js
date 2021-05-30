@@ -69,4 +69,18 @@ businessesRouter.get("/:slug/schedule", BusinessesMiddleware.getBySlug, async (r
   }
 })
 
+businessesRouter.get("/:slug/categories", BusinessesMiddleware.getBySlug, async (req, res, next) => {
+  try {
+    const { business } = req.locals
+    const categories = await Businesses.getCategories(business.id)
+    res.json({
+      error: false,
+      payload: categories,
+      message: `Business categories retrieved`
+    })
+  } catch (err) {
+    return next(err)
+  }
+})
+
 module.exports = businessesRouter;

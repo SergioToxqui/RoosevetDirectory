@@ -48,7 +48,7 @@ INSERT INTO business_schedules (business_id, day, open_time, close_time)
 INSERT INTO business_categories (business_id, category_id)
   VALUES
     (1, 1),
-    (1, 26),
+    (1, 11),
     (2, 1),
     (2, 16)
 ;

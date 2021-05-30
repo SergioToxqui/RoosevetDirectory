@@ -74,10 +74,24 @@ const getSchedule = async (id) => {
   return schedule
 }
 
+const getCategories = async (id) => {
+  const SQL = `
+    SELECT 
+      category_id,
+      name
+    FROM business_categories
+    JOIN categories ON business_categories.category_id = categories.id
+    WHERE business_id = $1; 
+  `
+  const categories = await db.any(SQL, [id])
+  return categories
+}
+
 module.exports = {
   add,
   searchByKeywords,
   searchByName,
   getBySlug,
-  getSchedule
+  getSchedule,
+  getCategories
 }
