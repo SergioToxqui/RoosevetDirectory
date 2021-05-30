@@ -9,7 +9,8 @@ import "../slick/slick-theme.css";
 class BusinessPage extends React.Component {
   state = {
     biz: {},
-    schedule: []
+    schedule: [],
+    categories: []
   };
 
   getBusiness = () => {
@@ -36,14 +37,26 @@ class BusinessPage extends React.Component {
       });
   };
 
+  getCategories = () => {
+    const { slug } = this.props.match.params
+    axios
+      .get(`/api/biz/${slug}/categories`)
+      .then(resp => {
+        this.setState({ categories: resp.data.payload });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   componentDidMount() {
     this.getBusiness();
     this.getSchedule();
+    this.getCategories();
   }
 
   render() {
-    console.log(window.location.hostname)
-    const { biz, schedule } = this.state
+    const { biz, schedule, categories } = this.state
     if (!biz || !biz.id) return <p>Loading...</p>
     let items = biz.objects.map((obj, i) => {
       return (
@@ -107,14 +120,18 @@ class BusinessPage extends React.Component {
 
           <div className="ui segment basic">
             <h3>Categories:</h3>
-            <p> {biz.categories}</p>
+            <div className="ui labels">
+              {categories.map(category => (
+                <span className="ui tag label"> {category.name}</span>
+              ))}
+            </div>
           </div>
 
           <div className="ui segment basic">
             <h3>Keywords:</h3>
             <div className="ui circular labels">
               {biz.keywords.split(' ').map(keyword => (
-                <span className="ui label"> { keyword}</span>
+                <span className="ui label"> {keyword}</span>
               ))}
             </div>
           </div>
