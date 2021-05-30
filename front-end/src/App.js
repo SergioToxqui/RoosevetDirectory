@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import './App.css';
-import "./Stylesheets/Header.css";
 import "./Stylesheets/Categories.css";
 import "./Stylesheets/Navigation.css";
 import "./Stylesheets/Front.css";
@@ -20,18 +19,14 @@ import Services from "./Navigation/Services";
 import Nightlife from "./Navigation/Nightlife";
 import About from "./Navigation/About";
 import BusinessPage from "./Navigation/BusinessPage";
+import TopMenu from "./Navigation/TopMenu";
 
 
 class App extends React.Component {
   render() {
     return (
       <div className="ui container">
-        <div className="header">
-          <div className="header-image"><Link to='/'><img src="https://image.ibb.co/n3Qkin/logo50.png" alt="logo" /></Link></div>
-          <div className="header-text">|  <Link to='/'> Roosevelt Directory</Link></div>
-          <div className="header-text2"><Link to='/about'> About Us </Link>|</div>
-          <div className="header-search"><Link to='/'><img src="https://image.ibb.co/fxtQE8/search_copy.png" alt="search" /></Link></div>
-        </div>
+        <TopMenu />
         <div className="categories">
           <div className="foodCat"><Link to='/food'><span>FOOD</span></Link></div>
           <div className="storesCat"><Link to='/stores'><span>STORES</span></Link></div>

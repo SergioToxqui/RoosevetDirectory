@@ -73,7 +73,6 @@ class BusinessPage extends React.Component {
     })
     return (
       <div>
-
         <h1 className="ui header">{biz.name}</h1>
         <div className="ui grid container">
           <div className="column eight wide">
