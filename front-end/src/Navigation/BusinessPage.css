@@ -25,3 +25,7 @@
   height: 100%;
   filter: blur(3px);
 }
+
+.dow {
+  text-transform: capitalize;
+}

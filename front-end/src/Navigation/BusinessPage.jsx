@@ -8,7 +8,8 @@ import "../slick/slick-theme.css";
 
 class BusinessPage extends React.Component {
   state = {
-    biz: {}
+    biz: {},
+    schedule: []
   };
 
   getBusiness = () => {
@@ -23,12 +24,26 @@ class BusinessPage extends React.Component {
       });
   };
 
+  getSchedule = () => {
+    const { slug } = this.props.match.params
+    axios
+      .get(`/api/biz/${slug}/schedule`)
+      .then(resp => {
+        this.setState({ schedule: resp.data.payload });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   componentDidMount() {
     this.getBusiness();
+    this.getSchedule();
   }
 
   render() {
-    const { biz } = this.state
+    console.log(window.location.hostname)
+    const { biz, schedule } = this.state
     if (!biz || !biz.id) return <p>Loading...</p>
     let items = biz.objects.map((obj, i) => {
       return (
@@ -44,7 +59,8 @@ class BusinessPage extends React.Component {
     })
     return (
       <div className="ui grid container">
-        <div className="eight wide column">
+        <div className="column eight wide">
+          <h1 className="ui header">{biz.name}</h1>
           <div className="slider-wrapper">
             <Slider dots={true}>{items}</Slider>
           </div>
@@ -62,27 +78,47 @@ class BusinessPage extends React.Component {
           </div>
         </div>
         <div className="eight wide column">
-          <div className="storeInfoName"> {biz.name}</div>
-          <div className="storeInfoAddress"> {biz.address}</div>
-          <div className="storeInfoPhone"> {biz.phone}</div>
-          <div className="storeInfoMon"> Monday</div>
-          <div className="storeInfoMonH"> {biz.mon}</div>
-          <div className="storeInfoTues"> Tuesday</div>
-          <div className="storeInfoTuesH"> {biz.tues}</div>
-          <div className="storeInfoWed"> Wednesday</div>
-          <div className="storeInfoWedH"> {biz.wed}</div>
-          <div className="storeInfoThurs"> Thursday</div>
-          <div className="storeInfoThursH"> {biz.thurs}</div>
-          <div className="storeInfoFri"> Friday</div>
-          <div className="storeInfoFriH"> {biz.fri}</div>
-          <div className="storeInfoSat"> Saturday</div>
-          <div className="storeInfoSatH"> {biz.sat}</div>
-          <div className="storeInfoSun"> Sunday</div>
-          <div className="storeInfoSunH"> {biz.sun}</div>
-          <div className="storeInfoBlurb"> {biz.description}</div>
 
+          <div className="ui segment basic">
+            <h3 className="ui header">Description:</h3>
+            <p> {biz.description}</p>
+          </div>
+
+          <div className="ui segment basic">
+            <h3>Address:</h3>
+            <p> {biz.address_1}</p>
+          </div>
+
+          <div className="ui segment basic compact">
+            <h3>Schedule:</h3>
+            <table class="ui striped compact table">
+              <tbody>
+                {schedule.map(day => (
+                  <tr key={day.day} >
+                    <td className="dow">{day.day}</td>
+                    <td>{day.open_time + " - " + day.close_time}</td>
+                    {/* <td>{day.close_time}</td> */}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p> {biz.address}</p>
+          </div>
+
+          <div className="ui segment basic">
+            <h3>Categories:</h3>
+            <p> {biz.categories}</p>
+          </div>
+
+          <div className="ui segment basic">
+            <h3>Keywords:</h3>
+            <div className="ui circular labels">
+              {biz.keywords.split(' ').map(keyword => (
+                <span className="ui label"> { keyword}</span>
+              ))}
+            </div>
+          </div>
         </div>
-
       </div >
     );
   }

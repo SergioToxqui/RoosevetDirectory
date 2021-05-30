@@ -54,7 +54,8 @@ const getBySlug = async (slug) => {
       SELECT
         businesses.id, name, name_slug, phone, address_1,
         address_2, description, active, status, thumb_img,
-        json_agg(json_build_object('url', objects.url, 'type', objects.type)) as objects
+        json_agg(json_build_object('url', objects.url, 'type', objects.type)) as objects,
+        keywords
       FROM businesses
       JOIN objects on businesses.id = objects.business_id
       WHERE name_slug = $1 AND objects.type::text LIKE '%photo'
