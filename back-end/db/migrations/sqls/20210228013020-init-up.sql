@@ -19,6 +19,7 @@ CREATE TABLE "categories" (
   "id" SERIAL PRIMARY KEY,
   "name" VARCHAR NOT NULL,
   "image_url" VARCHAR,
+  "description" VARCHAR,
   "parent_category_id" INT
 );
 
@@ -73,15 +74,18 @@ ALTER TABLE "objects" ADD FOREIGN KEY ("business_id") REFERENCES "businesses" ("
 
 ALTER TABLE "business_schedules" ADD FOREIGN KEY ("business_id") REFERENCES "businesses" ("id");
     
-INSERT INTO categories (name, parent_category_id, image_url)
+INSERT INTO categories (name, parent_category_id, image_url, description)
   VALUES 
     -- Main categories
-    ('food', NULL, 'https://image.ibb.co/n8qvZS/food.png'),
-    ('stores', Null, 'https://image.ibb.co/iafEeS/stores.png'),
-    ('services', NULL, 'https://image.ibb.co/jW8BR7/services.png'),
-    ('nightlife', NULL, 'https://image.ibb.co/iEJ0KS/nightlife.png'),
-    ('street vendor', NULL, 'https://images.unsplash.com/photo-1536067147722-33692458deb6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=bundo-kim-s1YItIZpQ2c-unsplash.jpg&w=640'),
+    ('food', NULL, 'https://image.ibb.co/n8qvZS/food.png', 'Jackson Heights has the best food to offer from amazing cuisines from all over the world'),
+    ('stores', Null, 'https://image.ibb.co/iafEeS/stores.png', 'Stores in Jackson Heights have anything you may need, from beauty products to construction materials'),
+    ('services', NULL, 'https://image.ibb.co/jW8BR7/services.png', 'Jackson Heights offers world class services delivered by the lovelies people'),
+    ('nightlife', NULL, 'https://image.ibb.co/iEJ0KS/nightlife.png', 'The vibrant nightlife of Jackson Heights makes it the perfect place to have fun and enjoy the drinks and food'),
+    ('street vendor', NULL, 'https://images.unsplash.com/photo-1536067147722-33692458deb6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=bundo-kim-s1YItIZpQ2c-unsplash.jpg&w=640', 'Low-cost, quick, eye-catching and delicious! Jackson Heights street vendors are like no others.')
+;
 
+INSERT INTO categories (name, parent_category_id, image_url)
+  VALUES 
     -- Food subcategories
     ('fresh groceries', 1, 'https://source.unsplash.com/SAPvKo12dQE'),
     ('supermarket', 1, 'https://source.unsplash.com/2mhqft65NIo'),

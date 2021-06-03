@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 const businessesRouter = require('./routes/businesses');
+const categoriesRouter = require('./routes/categories');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, '../front-end/build')));
 
 
 app.use('/api/biz', businessesRouter);
+app.use('/api/categories', categoriesRouter);
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '../front-end/build/index.html'));
 });
