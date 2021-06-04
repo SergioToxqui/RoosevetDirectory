@@ -6,4 +6,6 @@
 
 .top-menu__search-icon {
   margin-left: 1em;
+  border: 0;
+  background-color: transparent;
 }
