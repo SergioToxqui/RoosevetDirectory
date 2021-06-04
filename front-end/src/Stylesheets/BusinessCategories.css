@@ -1,19 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400");
-
 .category-menu {
-  height: 55px;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 100%;
   font-family: "Roboto", sans-serif;
-  margin: auto;
 }
 
 .category-menu__title {
   font-size: 2em;
   padding: 1%;
   text-shadow: 1px 1px 4px black;
-  color: black;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -24,7 +18,7 @@
 }
 
 .category-menu__description {
-  padding: 1%;
+  padding: 2%;
   text-align: center;
   background-color: black;
   color: white;
