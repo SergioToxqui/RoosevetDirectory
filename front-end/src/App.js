@@ -12,6 +12,7 @@ import "./Stylesheets/Nightlife.css";
 import "./Stylesheets/Tile.css";
 import "./Stylesheets/StoreInfo.css";
 import Home from "./Navigation/Home";
+import Search from "./Navigation/Search";
 import BusinessCategories from "./Navigation/BusinessCategories";
 import About from "./Navigation/About";
 import BusinessPage from "./Navigation/BusinessPage";
@@ -31,6 +32,7 @@ class App extends React.Component {
         </div>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/search" component={Search} />
           <Route path="/biz/:slug" component={BusinessPage} />
           <Route path="/about" component={About} />
           <Route path="/:category" component={BusinessCategories} />
