@@ -7,16 +7,12 @@ import "./Stylesheets/Front.css";
 import "./Stylesheets/Food.css";
 import "./Stylesheets/Home.css";
 import "./Stylesheets/Blurb.css";
-import "./Stylesheets/Stores.css";
 import "./Stylesheets/Services.css";
 import "./Stylesheets/Nightlife.css";
 import "./Stylesheets/Tile.css";
 import "./Stylesheets/StoreInfo.css";
 import Home from "./Navigation/Home";
-import Food from "./Navigation/Food";
-import Stores from "./Navigation/Stores";
-import Services from "./Navigation/Services";
-import Nightlife from "./Navigation/Nightlife";
+import BusinessCategories from "./Navigation/BusinessCategories";
 import About from "./Navigation/About";
 import BusinessPage from "./Navigation/BusinessPage";
 import TopMenu from "./Navigation/TopMenu";
@@ -35,12 +31,9 @@ class App extends React.Component {
         </div>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/food" component={Food} />
-          <Route path="/stores" component={Stores} />
-          <Route path="/services" component={Services} />
-          <Route path="/nightlife" component={Nightlife} />
           <Route path="/biz/:slug" component={BusinessPage} />
           <Route path="/about" component={About} />
+          <Route path="/:category" component={BusinessCategories} />
         </Switch>
       </div>
     );

@@ -3,7 +3,6 @@
 .categories {
   background: white;
   height: 55px;
-  width: 100vw;
   color: white;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
