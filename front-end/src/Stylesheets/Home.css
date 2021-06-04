@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400');
 .jumbotron {
     height: 40vh;
-    width:100%;
-    color: black;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,6 +12,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    margin-bottom: 25px;
 }
 
 .jumbotron__cta {
