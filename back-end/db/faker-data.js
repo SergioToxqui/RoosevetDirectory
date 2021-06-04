@@ -18,7 +18,7 @@ for (let i = 1; i <= ROWS_COUNT; i++) {
     address_1: `${faker.address.streetAddress()}, ${faker.address.stateAbbr()}, ${faker.address.zipCode()}`,
     address_2: faker.address.secondaryAddress(),
     description: faker.company.catchPhrase(),
-    thumb_img: faker.image.imageUrl(),
+    thumb_img: `https://picsum.photos/640/480?random=${(i % 100) + 1}`,
     active: true, //faker.datatype.boolean(),
     status: 'PENDING APPROVAL'
   }
