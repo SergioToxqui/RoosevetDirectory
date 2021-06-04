@@ -1,7 +1,7 @@
 import React from "react";
 import Blurb from "./Blurb";
 import axios from "axios";
-import SearchResults from "./searchResults";
+import SearchResults from "./SearchResults";
 import { css } from '@emotion/core'
 import GridLoader from 'react-spinners/GridLoader'
 
