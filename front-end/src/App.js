@@ -12,7 +12,7 @@ import "./Stylesheets/Nightlife.css";
 import "./Stylesheets/Tile.css";
 import "./Stylesheets/StoreInfo.css";
 import Home from "./Navigation/Home";
-import Search from "./Navigation/Search";
+import Search from "./Navigation/Search/Search";
 import BusinessCategories from "./Navigation/BusinessCategories";
 import About from "./Navigation/About";
 import BusinessPage from "./Navigation/BusinessPage";
